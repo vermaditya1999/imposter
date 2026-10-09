@@ -36,3 +36,11 @@ Franchise and show titles reserved here, so Characters must not use them: Harry 
 ## Familiarity risks I approved but would cut first
 
 **Deewar** for younger players. **Chhichhore** and **Dhamaal** are less iconic than their partners.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Golmaal / Dhamaal (Hard, `en-0804`) | keep (weakest 10%) | Both are huge comedy franchises; the ensemble vs treasure-hunt split works. |

@@ -15,7 +15,7 @@
     {"id": "en-0511", "words": ["Mumbai", "Delhi"], "difficulty": "medium", "difference": "Mumbai has the sea, local trains and Bollywood; Delhi is the capital, with the metro and winters."},
     {"id": "en-0512", "words": ["Bangalore", "Hyderabad"], "difficulty": "medium", "difference": "Bangalore means pubs, traffic and good weather; Hyderabad means biryani and the Charminar."},
     {"id": "en-0513", "words": ["Kolkata", "Chennai"], "difficulty": "medium", "difference": "Kolkata has the Howrah Bridge, yellow taxis and mishti; Chennai has Marina Beach, filter coffee and the heat."},
-    {"id": "en-0514", "words": ["Agra", "Jaisalmer"], "difficulty": "medium", "difference": "Agra has the Taj Mahal in white marble; Jaisalmer is the Golden City, with a sandstone fort and desert camps."},
+    {"id": "en-0514", "words": ["Jaisalmer", "Rann of Kutch"], "difficulty": "medium", "difference": "Jaisalmer is a golden fort city in the Thar desert; the Rann of Kutch is a flat white salt desert in Gujarat."},
     {"id": "en-0515", "words": ["Paris", "London"], "difficulty": "medium", "difference": "Paris has the Eiffel Tower and croissants; London has Big Ben, red buses and rain."},
     {"id": "en-0516", "words": ["New York", "Las Vegas"], "difficulty": "medium", "difference": "New York has Times Square and skyscrapers; Las Vegas has casinos in the desert."},
     {"id": "en-0517", "words": ["Japan", "South Korea"], "difficulty": "medium", "difference": "Japan has sushi, Mount Fuji and bullet trains; South Korea has K-pop, K-dramas and kimchi."},
@@ -29,7 +29,7 @@
     {"id": "en-0525", "words": ["Mount Everest", "Niagara Falls"], "difficulty": "easy", "difference": "Mount Everest is the highest peak; Niagara Falls is a giant waterfall."},
     {"id": "en-0526", "words": ["Sri Lanka", "Nepal"], "difficulty": "easy", "difference": "Sri Lanka is an island with beaches; Nepal is landlocked, with the Himalayas."},
     {"id": "en-0527", "words": ["USA", "UK"], "difficulty": "easy", "difference": "The USA has burgers, dollars and fifty states; the UK has tea, the royal family and pounds."},
-    {"id": "en-0528", "words": ["Antarctica", "Sahara"], "difficulty": "easy", "difference": "Antarctica is ice and penguins; the Sahara is sand and camels."},
+    {"id": "en-0530", "words": ["Thailand", "Russia"], "difficulty": "easy", "difference": "Thailand is hot, beaches and cheap holidays; Russia is huge, freezing and has onion-domed buildings."},
     {"id": "en-0529", "words": ["Hawaii", "Iceland"], "difficulty": "easy", "difference": "Both are volcanic islands. Hawaii is tropical, with surfing; Iceland is icy, with the northern lights."}
   ]
 }

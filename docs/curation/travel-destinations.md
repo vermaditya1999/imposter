@@ -34,3 +34,17 @@ Landmarks appear only where they are destinations in their own right (Mount Ever
 ## Familiarity risks I approved but would cut first
 
 **Pondicherry**, **Kodaikanal**, **Gangtok**, **Mauritius**.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Agra / Jaisalmer (Medium, `en-0514`) | edit: QC-14 → **Jaisalmer / Rann of Kutch** (Medium, `en-0514`) | One Taj Mahal clue gives Agra away. Rann of Kutch keeps the desert, camels and tents overlap. |
+| Paris / London (Medium, `en-0515`) | keep (flagged) | Safe clues are shared with many cities (Europe, river, museums, metro, shopping), so a Blank-mode imposter must still pick among them. Same tier as the Mumbai/Delhi anchor. |
+| Antarctica / Sahara (Easy, `en-0528`) | replace: QC-04 → **Thailand / Russia** (Easy, `en-0530`) | Antarctica gives itself away (ice, penguins) and neither word is a trip the group takes. Replaced with two foreign countries Indians visit. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.

@@ -32,3 +32,16 @@ Iron Man is used here, so Around the House must not use "Iron" (clothes iron). P
 ## Familiarity risks I approved but would cut first
 
 **Byomkesh Bakshi** (better known in the East), **Pluto**, **Deadpool**.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Sherlock Holmes / Byomkesh Bakshi (Hard, `en-0904`) | edit: QC-04 → **Sherlock Holmes / James Bond** (Medium, `en-0904`) | Byomkesh Bakshi isn't known to the whole group. James Bond keeps the famous-British-investigator overlap. Retagged Medium. |
+| Munna Bhai / Circuit (Hard, `en-0906`) | keep (weakest 10%) | Both are iconic. Circuit is the sidekick, which is itself a clue. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.

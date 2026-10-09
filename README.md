@@ -4,7 +4,7 @@ A pass-and-play word game for one phone. Everyone gets the same secret word exce
 get a similar-but-different word (or nothing at all, in Blank mode). Describe your word, vote out loud,
 and find the imposter.
 
-**Play:** [adiverma.in/imposter](https://adiverma.in/imposter/). It installs to the home screen as a PWA
+**Play:** [vermaditya1999.github.io/imposter](https://vermaditya1999.github.io/imposter/). It installs to the home screen as a PWA
 and works offline.
 
 - 410 hand-curated word pairs across 14 categories, each tagged Easy, Medium or Hard

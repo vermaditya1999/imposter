@@ -6,7 +6,7 @@
     {"id": "en-1002", "words": ["Ola", "Uber"], "difficulty": "hard", "difference": "Ola is the Indian company, green-and-black, with e-scooters too; Uber is the global, black-and-white one."},
     {"id": "en-1003", "words": ["Amazon", "Flipkart"], "difficulty": "hard", "difference": "Amazon is American, with Prime and Alexa; Flipkart is Indian, with the Big Billion Days sale."},
     {"id": "en-1004", "words": ["Coke", "Pepsi"], "difficulty": "hard", "difference": "Coke is red, owned by Coca-Cola, and the Thums Up family; Pepsi is blue, with the \"Yeh Dil Maange More\" ads."},
-    {"id": "en-1005", "words": ["Maggi", "Yippee"], "difficulty": "hard", "difference": "Maggi is Nestlé, square, and \"2-minute\"; Yippee is Sunfeast, round, with non-sticky noodles."},
+    {"id": "en-1031", "words": ["Decathlon", "IKEA"], "difficulty": "medium", "difference": "Decathlon is a giant sports store with cycles and tents; IKEA is a giant Swedish furniture store with flat-pack and meatballs."},
     {"id": "en-1006", "words": ["Paytm", "PhonePe"], "difficulty": "hard", "difference": "Paytm started as a wallet and is blue; PhonePe is purple and UPI-first."},
     {"id": "en-1007", "words": ["Netflix", "Prime Video"], "difficulty": "hard", "difference": "Netflix is red and has Money Heist; Prime Video comes with Amazon Prime and has Mirzapur."},
     {"id": "en-1008", "words": ["Parle-G", "Marie Gold"], "difficulty": "hard", "difference": "Parle-G is a sweet glucose biscuit with a baby on the pack; Marie Gold is Britannia's round, light tea biscuit."},
@@ -30,7 +30,7 @@
     {"id": "en-1026", "words": ["Thums Up", "Frooti"], "difficulty": "easy", "difference": "Thums Up is a strong cola; Frooti is a mango drink in a tetra pack."},
     {"id": "en-1027", "words": ["Maruti", "Royal Enfield"], "difficulty": "easy", "difference": "Maruti makes everyday cars; Royal Enfield makes the Bullet motorbike."},
     {"id": "en-1028", "words": ["Candy Crush", "Temple Run"], "difficulty": "easy", "difference": "Candy Crush is a match-three puzzle; Temple Run is an endless running game."},
-    {"id": "en-1029", "words": ["Spotify", "Kindle"], "difficulty": "easy", "difference": "Spotify is for music and podcasts; Kindle is for e-books."},
+    {"id": "en-1029", "words": ["Spotify", "Alexa"], "difficulty": "easy", "difference": "Spotify is a music app on your phone; Alexa is Amazon's voice assistant in a smart speaker."},
     {"id": "en-1030", "words": ["Colgate", "Dettol"], "difficulty": "easy", "difference": "Colgate is toothpaste; Dettol is the antiseptic liquid and soap."}
   ]
 }

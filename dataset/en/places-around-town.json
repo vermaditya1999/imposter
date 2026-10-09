@@ -29,8 +29,8 @@
     {"id": "en-0425", "words": ["Fire Station", "Post Office"], "difficulty": "easy", "difference": "Both are red government buildings. A Fire Station has engines and sirens; a Post Office has letters and stamps."},
     {"id": "en-0426", "words": ["Petrol Pump", "Car Wash"], "difficulty": "easy", "difference": "At a Petrol Pump you fill fuel; at a Car Wash you get the car cleaned."},
     {"id": "en-0427", "words": ["Cinema", "Amusement Park"], "difficulty": "easy", "difference": "At a Cinema you sit in the dark watching a film; at an Amusement Park you go on rides all day."},
-    {"id": "en-0428", "words": ["Construction Site", "Farm"], "difficulty": "easy", "difference": "Both are outdoor workplaces with heavy machines. A Construction Site has cranes and cement; a Farm has tractors, crops and animals."},
+    {"id": "en-0428", "words": ["Construction Site", "Warehouse"], "difficulty": "easy", "difference": "A Construction Site is outdoors, building something new with cranes and cement; a Warehouse is a big shed where goods are stored and loaded onto trucks."},
     {"id": "en-0429", "words": ["Garden", "Terrace"], "difficulty": "easy", "difference": "A Garden is on the ground, with grass and plants; a Terrace is the rooftop of a building."},
-    {"id": "en-0430", "words": ["Highway", "Flyover"], "difficulty": "easy", "difference": "A Highway is a long road between cities; a Flyover is a short raised road over a junction."}
+    {"id": "en-0430", "words": ["Flyover", "Railway Crossing"], "difficulty": "easy", "difference": "A Flyover lifts the road over traffic; a Railway Crossing is where the road meets the tracks, with gates that drop when a train comes."}
   ]
 }

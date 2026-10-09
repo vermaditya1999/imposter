@@ -38,3 +38,26 @@ Condiments (Ketchup, Mustard, Salsa, Mayonnaise) are included as accompaniments,
 ## Familiarity risks I approved but would cut first
 
 **Bao**, **Sashimi**, **Quesadilla**, **Satay**, **Pad Thai**, **Teriyaki**, **Tempura**, **Kimchi**: well known in metro cafés, less so elsewhere.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Fried Chicken / Chicken Wings (Hard, `en-0208`) | edit: QC-02 → **Chicken Wings / Chicken Nuggets** (Hard, `en-0208`) | Wings are usually a kind of Fried Chicken. Paired with Nuggets instead (swapped from Fish and Chips). |
+| Dim Sum / Bao (Hard, `en-0210`) | edit: QC-02 → **Dim Sum / Spring Roll** (Medium, `en-0210`) | Bao is a kind of Dim Sum. Spring Roll keeps the Chinese-starter overlap. Retagged Medium. |
+| Granola / Muesli (Hard, `en-0211`) | replace: QC-02 → **Sausage / Salami** (Hard, `en-0230`) | Granola and Muesli are near-synonyms and Muesli is less known. Replaced with a Hard processed-meat Pair. |
+| Fish and Chips / Chicken Nuggets (Medium, `en-0216`) | edit: QC-09 → **Fish and Chips / Fried Chicken** (Medium, `en-0216`) | Nuggets moved to Chicken Wings; Fried Chicken keeps the battered-and-fried overlap. |
+| Thai Curry / Satay (Medium, `en-0218`) | keep (weakest 10%) | Satay is on every Pan-Asian menu; the contrast between curry and skewers is clean. |
+| Toast / Baked Beans (Easy, `en-0225`) | replace: QC-03 → **Soup / Steak** (Easy, `en-0231`) | Toast and Baked Beans are different kinds of thing (bread vs a side). Replaced with two restaurant courses. |
+| Teriyaki / Tempura (Easy, `en-0226`) | replace: QC-08 → **Barbecue / Fondue** (Easy, `en-0232`) | Teriyaki is a sauce and Tempura a batter, so they aren't the same kind of thing, and Teriyaki is less known. Replaced with two group-meal styles. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator. These failed and were replaced again, keeping the id (it was never released):
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Sausage / Salami (`en-0230`) | replace → **Meatballs / Sausage** (Medium, `en-0230`) | Sausage / Salami failed the blind re-check: Salami is a kind of sausage (QC-02). Retagged Medium. |
+| Barbecue / Fondue (`en-0232`) | replace → **Barbecue / Buffet** (Easy, `en-0232`) | Barbecue / Fondue failed the blind re-check: Fondue isn't known to the whole group (QC-04). |

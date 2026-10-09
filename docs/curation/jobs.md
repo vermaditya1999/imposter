@@ -30,3 +30,16 @@ Drafted and curated by Claude on 2026-10-09, after the user delegated curation. 
 ## Notes
 
 "Air Hostess" is used because it's the everyday Indian English term. "Cabin Crew" is the neutral alternative if the group prefers it.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Photographer / Videographer (Hard, `en-0604`) | keep (flagged) | Hard by design. One clean telling difference: stills vs video (the wedding videographer is familiar to everyone). |
+| Barber / Hairstylist (Hard, `en-0606`) | edit: QC-02 → **Barber / Makeup Artist** (Medium, `en-0606`) | Barber and Hairstylist both cut hair and players argue. Makeup Artist keeps the salon and wedding overlap. Retagged Medium. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.

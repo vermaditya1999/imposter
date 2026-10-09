@@ -29,3 +29,18 @@ Drafted and curated by Claude on 2026-10-09, after the user delegated curation. 
 ## Notes
 
 Clothes & Accessories must avoid **Bag** (Bean Bag) and **Shoe** (Shoe Rack). Gadgets must avoid TV-adjacent overlaps with appliances here.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Tawa / Frying Pan (Hard, `en-1104`) | keep (flagged) | Hard by design. Telling difference: a Tawa is flat and rimless for rotis, a Frying Pan has sides for eggs. |
+| Glass / Cup (Hard, `en-1108`) | keep (flagged) | Hard by design. Telling difference: the handle, and chai in a cup vs water in a glass. |
+| Mixer Grinder / Juicer (Hard, `en-1110`) | edit: QC-02 → **Mixer Grinder / Toaster** (Medium, `en-1110`) | Indian Mixer Grinders come with a juicer jar, so the clues blurred. Retagged Medium. |
+| Lock / Key (Easy, `en-1126`) | edit: QC-02 → **Lock / Doorbell** (Easy, `en-1126`) | Lock and Key are a set, so every clue for one implies the other. Doorbell keeps the 'on the front door' overlap. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.

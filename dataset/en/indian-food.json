@@ -11,7 +11,7 @@
     { "id": "en-0007", "words": ["Biryani", "Pulao"], "difficulty": "hard", "difference": "Biryani is layered, dum-cooked and spicier; Pulao is cooked in one pot and milder." },
     { "id": "en-0008", "words": ["Naan", "Kulcha"], "difficulty": "hard", "difference": "Naan is plain or buttered; Kulcha is softer, often stuffed, and Amritsari." },
     { "id": "en-0009", "words": ["Poha", "Upma"], "difficulty": "hard", "difference": "Poha is made of flattened rice and has peanuts; Upma is made of semolina." },
-    { "id": "en-0010", "words": ["Cutlet", "Aloo Tikki"], "difficulty": "hard", "difference": "A Cutlet is crumbed and eaten with ketchup; Aloo Tikki is a chaat, served with chole and chutneys." },
+    { "id": "en-0010", "words": ["Aloo Tikki", "Hara Bhara Kebab"], "difficulty": "medium", "difference": "An Aloo Tikki is a golden potato patty served with chutneys as chaat; a Hara Bhara Kebab is a green spinach-and-pea patty served as a starter." },
     { "id": "en-0011", "words": ["Samosa", "Kachori"], "difficulty": "medium", "difference": "Samosa is triangular with a potato filling; Kachori is round with a dal filling." },
     { "id": "en-0012", "words": ["Butter Chicken", "Tandoori Chicken"], "difficulty": "medium", "difference": "Butter Chicken comes in a creamy gravy; Tandoori Chicken is dry and charred from the tandoor." },
     { "id": "en-0013", "words": ["Dal Makhani", "Sambar"], "difficulty": "medium", "difference": "Dal Makhani is creamy, black-lentil and North Indian; Sambar is tangy, has vegetables and is South Indian." },

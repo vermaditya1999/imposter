@@ -59,6 +59,7 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - [Task: author and curate Clothes & Accessories](tickets/022-author-clothes-accessories.md): 29 Pairs, all Machine checks pass
 - [Task: author and curate Gadgets](tickets/023-author-gadgets.md): 28 Pairs, all Machine checks pass
 - [Grilling: what the build-ready spec contains and where it lives](tickets/026-spec-handoff.md): no separate spec; build straight from the tickets; visual identity comes from the user's reference
+- [Task: adversarial audit of the v1 Dataset](tickets/025-adversarial-audit.md): a blind Sonnet audit flagged 48/410 Pairs; 35 Pairs changed, every change re-checked blind; the tier-blind prompt over-flags Hard Pairs
 
 ## Not yet specified
 

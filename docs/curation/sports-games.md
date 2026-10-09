@@ -34,3 +34,11 @@ Includes sports, board and card games, playground games and party games: all thi
 ## Familiarity risks I approved but would cut first
 
 **Chor Police**, **Kayaking**, **Teen Patti** (some families may object to a gambling game).
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Poker / Teen Patti (Hard, `en-0703`) | keep (flagged) | Hard by design. Telling difference: Teen Patti is three cards at Diwali, Poker is five cards, chips and casinos. |

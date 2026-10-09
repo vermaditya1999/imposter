@@ -1,8 +1,8 @@
 ---
 title: "Task: adversarial audit of the v1 Dataset"
 type: wayfinder:task
-status: open
-assignee: ""
+status: closed
+assignee: "claude"
 blocked_by: []
 parent: map
 ---
@@ -37,3 +37,16 @@ Done when the audit file covers all Pairs, every flagged Pair has been re-curate
 **Priority:** quality improvement only, so it blocks nothing on the map. Run it whenever convenient.
 
 Out of this ticket: generating new candidates at scale, game simulation, telemetry. See the map's Not yet specified section.
+
+## Resolution
+
+Done 2026-10-09. Results in [audit-v1.json](../../curation/audit-v1.json); prompt in [audit-prompt-v1.md](../../curation/audit-prompt-v1.md).
+
+- **Evaluator:** 14 fresh Sonnet sessions, one per Category, blind (only the Category name and the two words).
+- **Result:** 48 of 410 Pairs flagged. Clothes & Accessories (8), Sweets & Desserts (6) and Animals (6) were the weakest; Movies & Shows had none.
+- **Re-curation** of the 48 flagged Pairs plus the weakest 10% (62 Pairs), with the logs read only at this stage: 35 Pairs changed (23 edited with the same id, 12 replaced with new ids) and 29 kept with a written reason. The changes include two knock-on swaps needed to free a word. Logged under `## Audit (v1)` in each Category's curation log.
+- **Why so many flagged Pairs were kept:** the evaluator doesn't know the tiers (blind by design), so it penalises the closeness that *defines* Hard. It even flagged the Hard anchor Swiggy/Zomato. A flagged Hard Pair was kept only when it has one clean, written Telling Difference.
+- **Blind re-check of every change** (35 Pairs) caught 5 bad replacements, all Hard Pairs that were too close or unfamiliar. Those were replaced again and checked again until they passed. The Curator kept one borderline Pair (Ice Gola/Milkshake).
+- `python3 scripts/check_dataset.py dataset/en` → ALL CHECKS PASS. Still 410 Pairs; every Category keeps at least 8 Pairs per tier.
+
+**Learned for the next audit:** the tier-blind prompt can't tell "Hard" from "too similar". A v2 prompt could tell the evaluator the tier (not the difference) so it judges closeness against the tier's meaning.

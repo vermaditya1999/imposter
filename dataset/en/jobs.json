@@ -7,7 +7,7 @@
     {"id": "en-0603", "words": ["Journalist", "News Anchor"], "difficulty": "hard", "difference": "A Journalist goes out and reports or writes; a News Anchor reads the news on TV in a studio."},
     {"id": "en-0604", "words": ["Photographer", "Videographer"], "difficulty": "hard", "difference": "A Photographer takes stills; a Videographer shoots video, like the wedding film."},
     {"id": "en-0605", "words": ["Accountant", "Banker"], "difficulty": "hard", "difference": "An Accountant keeps a company's books and files taxes; a Banker works at a bank, handling loans and accounts."},
-    {"id": "en-0606", "words": ["Barber", "Hairstylist"], "difficulty": "hard", "difference": "A Barber has a local shop for men's cuts and shaves; a Hairstylist works in a salon, with colour and styling."},
+    {"id": "en-0606", "words": ["Barber", "Makeup Artist"], "difficulty": "medium", "difference": "A Barber cuts men's hair and shaves beards; a Makeup Artist does faces, mostly for brides and shoots."},
     {"id": "en-0607", "words": ["Police Officer", "Security Guard"], "difficulty": "hard", "difference": "A Police Officer is government, can arrest people and has a station; a Security Guard is private and guards one building or gate."},
     {"id": "en-0608", "words": ["Software Engineer", "Data Scientist"], "difficulty": "hard", "difference": "A Software Engineer builds apps and products; a Data Scientist analyses data and builds models."},
     {"id": "en-0609", "words": ["Singer", "Rapper"], "difficulty": "hard", "difference": "A Singer carries a melody; a Rapper delivers fast rhyming verses."},

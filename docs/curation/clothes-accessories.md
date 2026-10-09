@@ -38,3 +38,26 @@ Bag and Shoe are avoided (Bean Bag and Shoe Rack are in Around the House). "Watc
 ## Familiarity risks I approved but would cut first
 
 **Kolhapuri**, **Jutti** (regional footwear names).
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Shawl / Dupatta (Hard, `en-1203`) | keep (flagged) | Hard by design. Telling difference: a Shawl is for warmth in winter, a Dupatta is light and part of a suit. |
+| Salwar / Churidar (Hard, `en-1204`) | edit: QC-02 → **Salwar / Palazzo** (Hard, `en-1204`) | A Churidar is a kind of Salwar. Palazzo keeps the 'loose pants worn with a kurta' overlap. |
+| Dhoti / Lungi (Hard, `en-1205`) | keep (flagged) | Hard by design. Telling difference: a Dhoti is tucked between the legs and formal, a Lungi is a casual tube. |
+| Chappal / Sandal (Hard, `en-1206`) | replace: QC-02 → **Leggings / Jeggings** (Hard, `en-1230`) | Chappal and Sandal are synonyms in Indian English (Flip-Flops/Chappal was rejected for the same reason). Replaced with a Hard Pair. |
+| Cap / Hat (Hard, `en-1207`) | edit: QC-02 → **Cap / Helmet** (Medium, `en-1207`) | Cap and Hat are used interchangeably. Retagged Medium. |
+| Jeans / Trousers (Medium, `en-1213`) | edit: QC-02 → **Jeans / Cargo Pants** (Medium, `en-1213`) | Jeans are a kind of trousers, so the Pair was one-sided. |
+| Sweater / Jacket (Medium, `en-1218`) | keep (flagged) | Medium. Knit vs zip and buttons is a clean split; the evaluator flagged it as borderline only. |
+| Gown / Frock (Medium, `en-1219`) | edit: QC-02 → **Gown / Tuxedo** (Medium, `en-1219`) | A Gown and a Frock are both one-piece dresses and players argue. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator. These failed and were replaced again, keeping the id (it was never released):
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Leggings / Jeggings (`en-1230`) | replace → **Dungarees / Jumpsuit** (Hard, `en-1230`) | Leggings / Jeggings failed the blind re-check as near-synonyms (QC-02). |

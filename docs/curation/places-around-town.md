@@ -32,3 +32,18 @@ Drafted and curated by Claude on 2026-10-09, after the user delegated curation. 
 ## Notes
 
 Later Categories must avoid these words, because QC-09 would flag them: **Pool** (use Billiards or Snooker), **Yoga**, **Bowling**, **Park**, **Station**, **Market**.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Bank / ATM (Hard, `en-0404`) | keep (weakest 10%) | A clean telling difference (loans and a manager vs a machine in a booth). |
+| Fire Station / Post Office (Easy, `en-0425`) | keep (flagged) | Easy by design. Shared clues: red (post box, fire engine), government job, uniforms, vans, one in every area. |
+| Construction Site / Farm (Easy, `en-0428`) | edit: QC-08 → **Construction Site / Warehouse** (Easy, `en-0428`) | A Farm isn't a place around town. Warehouse keeps the workers, trucks and dust overlap (Factory fails QC-09 against Kota Factory). |
+| Highway / Flyover (Easy, `en-0430`) | edit: QC-02 → **Flyover / Railway Crossing** (Easy, `en-0430`) | A Flyover is a section of road, so Highway blurred. Railway Crossing keeps the traffic-spot overlap. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.

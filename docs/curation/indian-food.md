@@ -34,3 +34,16 @@ Drafted and curated by Claude on 2026-10-09, after the user delegated curation. 
 ## Familiarity risks I approved but would cut first
 
 These pass QC-04 for a broadly urban Indian group, but they're regional. If the group is mostly North Indian or mostly South Indian, these are the ones to replace: **Dabeli**, **Misal Pav**, **Appam**, **Kadhi**, **Rasam**.
+
+## Audit (v1)
+
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Cutlet / Aloo Tikki (Hard, `en-0010`) | edit: QC-02 → **Aloo Tikki / Hara Bhara Kebab** (Medium, `en-0010`) | Cutlet is too vague (veg, chicken, crumbed) to clue against Aloo Tikki; swapped for a clearly different patty. Retagged Medium: colour splits them in a couple of clues. |
+| Bhature / Appam (Easy, `en-0024`) | keep (flagged) | Easy by design (first clue gives the imposter away). Shared clues exist: bread, eaten with curry, round, puffy. |
+
+### Blind re-check of the changes
+
+Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.
