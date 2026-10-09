@@ -22,7 +22,7 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
   - Dataset: English for v1, schema must allow more locales later. Bundled in the app, shipped with releases.
   - Authoring: Claude drafts **and curates** (approve / edit / reject every pair) against the Quality Checklist + automated checks. *Changed 2026-10-09: the user delegated curation to Claude to reach the end product faster; the user no longer reviews each Pair.*
   - Every pair tagged **Easy / Medium / Hard**.
-  - v1 features: player names, imposter count, category selection, pass-to-reveal, discussion timer, final reveal. Voting is verbal.
+  - v1 features: player names, imposter count, category selection, pass-to-reveal (hold to peek), final reveal. Voting is verbal. **No discussion timer** (dropped 2026-10-09 by the user).
   - **Quality bar — none of these may regress in the dataset:** words too obscure or too easy (untagged); categories too broad or too narrow; pairs too obvious or nonsensical; culturally off for the group; too few words / repetition; bad translation or awkward phrasing.
 - 2026-10-09: the user delegated the Pair schema, v1 Category list and game rules grillings to Claude ("approve all of them, I trust you"). Those resolutions are Claude's calls, so revisit them freely.
 - **Dataset v1 is complete:** 410 Pairs across 14 Categories in `dataset/en/`, checked by `scripts/check_dataset.py`. Pair ids were renumbered freely while authoring and **freeze at the first release**. After that, new Pairs only ever append.
@@ -38,10 +38,11 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - [Grilling: the Dataset Quality Checklist](tickets/004-quality-checklist.md): 13 criteria (QC-01…13), difficulty = closeness with anchor Pairs, every word unique, Curator records the failed criterion ID on reject
 - [Grilling: Pair schema and dataset file format](tickets/005-pair-schema.md): unordered Pair (coin flip picks the Civilian Word each Round) with `id`, `words`, `difficulty`, `difference`; one JSON file per Category per locale; locales curated independently; a check script enforces the Machine criteria
 - [Grilling: the v1 Category list](tickets/006-v1-categories.md): 14 Categories × ~30 Pairs (food ×3, animals, places, destinations, jobs, sports & games, movies & shows, characters, brands, house, clothes, gadgets); Indian Food is the pilot
-- [Grilling: game rules and Round flow](tickets/007-game-rules.md): 3–12 players, Undercover imposters aren't told, one verbal vote then Reveal, Last Guess for a Blank-mode imposter, no in-app scoring
+- [Grilling: game rules and Round flow](tickets/007-game-rules.md): 3–12 players, no timer (dropped later), Undercover imposters aren't told, one verbal vote then Reveal, Last Guess for a Blank-mode imposter, no in-app scoring
 - [Prototype: pilot batch — one full Category authored and curated](tickets/008-pilot-category-batch.md): workflow holds (Indian Food: 30 Pairs, 23% reject rate in self-review); QC-09 gained a modifier rule; one task per Category with reserved id blocks
 - [Grilling: repeat avoidance across Rounds and sessions](tickets/010-repeat-avoidance.md): on-device history of dealt Pair ids; Deck = current selection minus history; side-agnostic; auto-reshuffles only the exhausted selection; manual reset in settings
 - [Research: what a PWA can do for private pass-and-play on iPhone and Android](tickets/024-pwa-capabilities.md): everything works except iPhone haptics; no screenshot blocking on the web (hide on `visibilitychange`); iPhone history is safe only from the home screen; Vite + Preact + vite-plugin-pwa recommended
+- [Prototype: pass-and-play setup and reveal flow](tickets/009-reveal-flow.md): hold to peek (word visible only while a finger is down), players in entry order, step-by-step end Reveal, no discussion timer, iPhone-only Add to Home Screen banner on Setup
 - [Task: author and curate Sweets & Desserts](tickets/011-author-sweets-desserts.md): 29 Pairs, all Machine checks pass
 - [Task: author and curate World Food](tickets/012-author-world-food.md): 29 Pairs, all Machine checks pass
 - [Task: author and curate Animals](tickets/013-author-animals.md): 29 Pairs, all Machine checks pass
@@ -62,7 +63,6 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - **Scoring across rounds** and **custom/user-added words** — maybe-v1.x features, parked until the core flow is settled.
 - **Scaling the Dataset past v1** — the user's research funnel (generate many candidates, then filter, clue-space evaluation, adversarial evaluation and diversity selection), learning from real play. Only if 410 Pairs runs out for the group.
 - **Hosting** — GitHub Pages (needs a public repo) or Cloudflare Pages, plus the URL friends open; see the PWA research.
-- **Spec handoff format** — what the final build-ready spec looks like and where it lives.
 
 ## Out of scope
 
