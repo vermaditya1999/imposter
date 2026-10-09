@@ -20,12 +20,20 @@ For each Pair, in **both directions** (A as Civilian Word with B as Imposter Wor
 - **Giveaway risk:** could a Blank-mode imposter name A from the Category plus typical clues? Tests QC-14.
 - **Synonym risk** and **one-sidedness:** does the Pair play much worse in one direction?
 
-Record compact scores per Pair (e.g. `distinguishing`, `bluffable`, `giveaway_risk`, `synonym_risk`, `one_sided`, `keep`) in `dataset-drafts/audit-v1.json`, with the model name and prompt version.
+Also check **familiarity** for the group (QC-04/QC-05).
 
-Then re-curate every Pair that fails, plus the weakest ~10% overall: fix it or replace it, log each one in its Category's curation log with a QC id, and rerun `scripts/check_dataset.py`.
+Record results per Pair in `dataset-drafts/audit-v1.json` as `{id, words, scores: {distinguishing, bluffable, giveaway_risk, synonym_risk, one_sided, familiarity} (0–10), keep, note}`, with top-level `model` and `prompt_version`.
+
+Then re-curate every Pair that fails, plus the weakest ~10% overall: fix it or replace it, following the Quality Checklist.
+- Keep each Pair's `id`. A replacement Pair takes the next free id in its Category's block.
+- Log each change with its QC id under a new `## Audit (v1)` section in that Category's curation log (`dataset-drafts/<category>.md`).
+- Re-check each changed Pair's difficulty against the anchors.
+- Finally, `python3 scripts/check_dataset.py dataset/en` must print ALL CHECKS PASS.
 
 Fully AFK. Work through the Categories in batches, and write audit results to disk after each Category so a session can resume.
 
 Done when the audit file covers all Pairs, every flagged Pair has been re-curated, and the Machine checks pass.
+
+**Priority:** quality improvement only, so it blocks nothing on the map. Run it whenever convenient.
 
 Out of this ticket: generating new candidates at scale, game simulation, telemetry. See the map's Not yet specified section.

@@ -20,4 +20,5 @@ Repetition is the top complaint in existing games. How does the app make sure a 
 - **Sides don't matter.** A dealt Pair counts as played whichever word was the Civilian Word. Getting Samosa/Kachori again with the sides flipped still feels like a repeat.
 - **When the Deck runs out**, the app clears history for just the Pairs in the current selection and shows a one-line notice: "You've played every Pair in this selection — reshuffling." Play never stops, and history for other Categories survives.
 - **Manual reset:** a "Reset played words" action in settings, behind a confirmation.
+- **Storage (added after the PWA research):** keep history in `localStorage` and call `navigator.storage.persist()`. In a plain iPhone Safari tab, history can be wiped after 7 days without play. That's acceptable, and the app nudges iPhone players to Add to Home Screen, where it's safe.
 - **Dataset updates:** history is keyed on stable `id`s. Ids of removed Pairs are ignored, and new Pairs arrive unplayed.

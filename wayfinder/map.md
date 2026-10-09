@@ -41,6 +41,7 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - [Grilling: game rules and Round flow](tickets/007-game-rules.md): 3–12 players, Undercover imposters aren't told, one verbal vote then Reveal, Last Guess for a Blank-mode imposter, no in-app scoring
 - [Prototype: pilot batch — one full Category authored and curated](tickets/008-pilot-category-batch.md): workflow holds (Indian Food: 30 Pairs, 23% reject rate in self-review); QC-09 gained a modifier rule; one task per Category with reserved id blocks
 - [Grilling: repeat avoidance across Rounds and sessions](tickets/010-repeat-avoidance.md): on-device history of dealt Pair ids; Deck = current selection minus history; side-agnostic; auto-reshuffles only the exhausted selection; manual reset in settings
+- [Research: what a PWA can do for private pass-and-play on iPhone and Android](tickets/024-pwa-capabilities.md): everything works except iPhone haptics; no screenshot blocking on the web (hide on `visibilitychange`); iPhone history is safe only from the home screen; Vite + Preact + vite-plugin-pwa recommended
 - [Task: author and curate Sweets & Desserts](tickets/011-author-sweets-desserts.md): 29 Pairs, all Machine checks pass
 - [Task: author and curate World Food](tickets/012-author-world-food.md): 29 Pairs, all Machine checks pass
 - [Task: author and curate Animals](tickets/013-author-animals.md): 29 Pairs, all Machine checks pass
@@ -60,6 +61,7 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - **Visual identity** — app name, look and feel, tone of the copy.
 - **Scoring across rounds** and **custom/user-added words** — maybe-v1.x features, parked until the core flow is settled.
 - **Scaling the Dataset past v1** — the user's research funnel (generate many candidates, then filter, clue-space evaluation, adversarial evaluation and diversity selection), learning from real play. Only if 410 Pairs runs out for the group.
+- **Hosting** — GitHub Pages (needs a public repo) or Cloudflare Pages, plus the URL friends open; see the PWA research.
 - **Spec handoff format** — what the final build-ready spec looks like and where it lives.
 
 ## Out of scope
