@@ -6,7 +6,7 @@ status: open
 
 ## Destination
 
-A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app, installable as a PWA on phones**, plus **v1 of the dataset**: ~12–15 categories × ~30 word pairs (~400 pairs), curated against a written quality checklist.
+A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app, installable as a PWA on phones**, plus **v1 of the dataset**: ~12–15 categories × ~30 word pairs (~400 pairs), curated against a written quality checklist. *Redrawn 2026-10-09 by the user: the destination now includes **building v1 of the app** itself.*
 
 ## Notes
 
@@ -26,6 +26,8 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
   - **Quality bar — none of these may regress in the dataset:** words too obscure or too easy (untagged); categories too broad or too narrow; pairs too obvious or nonsensical; culturally off for the group; too few words / repetition; bad translation or awkward phrasing.
 - 2026-10-09: the user delegated the Pair schema, v1 Category list and game rules grillings to Claude ("approve all of them, I trust you"). Those resolutions are Claude's calls, so revisit them freely.
 - **Dataset v1 is complete:** 410 Pairs across 14 Categories in `dataset/en/`, checked by `scripts/check_dataset.py`. Pair ids were renumbered freely while authoring and **freeze at the first release**. After that, new Pairs only ever append.
+- 2026-10-09: the user carried execution into the map ("let's build the game now"). The decisions stay in their tickets; there's no separate spec document.
+- **The v1 app is built** (2026-10-09): `npm run dev` to play, `npm run build` for `dist/`. See [Task: build the v1 app](tickets/027-build-v1-app.md).
 - Research notes are written to `docs/research/<slug>.md` (not throwaway branches — the repo has no commits yet).
 
 ## Decisions so far
@@ -56,10 +58,10 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - [Task: author and curate Around the House](tickets/021-author-around-the-house.md): 30 Pairs, all Machine checks pass
 - [Task: author and curate Clothes & Accessories](tickets/022-author-clothes-accessories.md): 29 Pairs, all Machine checks pass
 - [Task: author and curate Gadgets](tickets/023-author-gadgets.md): 28 Pairs, all Machine checks pass
+- [Grilling: what the build-ready spec contains and where it lives](tickets/026-spec-handoff.md): no separate spec; build straight from the tickets; visual identity comes from the user's reference
 
 ## Not yet specified
 
-- **Visual identity** — app name, look and feel, tone of the copy.
 - **Scoring across rounds** and **custom/user-added words** — maybe-v1.x features, parked until the core flow is settled.
 - **Scaling the Dataset past v1** — the user's research funnel (generate many candidates, then filter, clue-space evaluation, adversarial evaluation and diversity selection), learning from real play. Only if 410 Pairs runs out for the group.
 - **Hosting** — GitHub Pages (needs a public repo) or Cloudflare Pages, plus the URL friends open; see the PWA research.
