@@ -1,7 +1,7 @@
 # Dataset Quality Checklist
 
 Every Pair must pass every criterion before it enters the Dataset. Decided in the wayfinder ticket
-[Grilling: the Dataset Quality Checklist](../wayfinder/tickets/004-quality-checklist.md), building on the
+[Grilling: the Dataset Quality Checklist](wayfinder/tickets/004-quality-checklist.md), building on the
 [existing-games survey](research/existing-games-survey.md).
 
 **Check** says who enforces it: **Machine** (automated dataset check) or **Curator** (the user's judgement during review).

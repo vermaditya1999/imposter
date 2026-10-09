@@ -1,4 +1,4 @@
-// Pure game rules: see wayfinder tickets 007 (rules), 009 (flow) and 010 (repeat avoidance).
+// Pure game rules: see docs/wayfinder tickets 007 (rules), 009 (flow) and 010 (repeat avoidance).
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
 export type Mode = 'undercover' | 'blank';
