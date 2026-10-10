@@ -40,7 +40,7 @@ Out of this ticket: generating new candidates at scale, game simulation, telemet
 
 ## Resolution
 
-Done 2026-10-09. Results in [audit-v1.json](../../curation/audit-v1.json); prompt in [audit-prompt-v1.md](../../curation/audit-prompt-v1.md).
+Done 2026-10-09. Results in [audit-v1.json](../../curation/audit-v1.json); prompt in [prompts/audit-v1.md](../../pipeline/prompts/audit-v1.md).
 
 - **Evaluator:** 14 fresh Sonnet sessions, one per Category, blind (only the Category name and the two words).
 - **Result:** 48 of 410 Pairs flagged. Clothes & Accessories (8), Sweets & Desserts (6) and Animals (6) were the weakest; Movies & Shows had none.
