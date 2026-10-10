@@ -1,7 +1,7 @@
 # Imposter
 
 A pass-and-play word game for one phone. Everyone gets the same secret word except the imposters, who
-get a similar-but-different word (or nothing at all, in Blank mode). Describe your word, vote out loud,
+get a similar-but-different word (in Spy mode, they're also told they're the imposter). Describe your word, vote out loud,
 and find the imposter.
 
 **Play:** [vermaditya1999.github.io/imposter](https://vermaditya1999.github.io/imposter/). It installs to the home screen as a PWA

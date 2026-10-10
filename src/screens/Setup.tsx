@@ -217,7 +217,7 @@ export function Setup({
 
               <section class="panel">
                 <h2>Mode</h2>
-                <div class={`segmented ${mode === 'blank' ? 'right' : ''}`} role="radiogroup" aria-label="Mode">
+                <div class={`segmented ${mode === 'spy' ? 'right' : ''}`} role="radiogroup" aria-label="Mode">
                   <span class="segmented-thumb" aria-hidden="true" />
                   <button
                     type="button"
@@ -230,16 +230,16 @@ export function Setup({
                   <button
                     type="button"
                     role="radio"
-                    aria-checked={mode === 'blank'}
-                    onClick={() => onChange({ ...settings, mode: 'blank' })}
+                    aria-checked={mode === 'spy'}
+                    onClick={() => onChange({ ...settings, mode: 'spy' })}
                   >
-                    Blank
+                    Spy
                   </button>
                 </div>
                 <p class="fine mode-hint" key={mode}>
                   {mode === 'undercover'
                     ? "Imposters get a similar word — and don't know they're the imposter."
-                    : 'Imposters get no word. If caught, they get one last guess.'}
+                    : "Imposters get a similar word — and know they're the imposter."}
                 </p>
               </section>
 

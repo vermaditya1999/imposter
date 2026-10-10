@@ -1,7 +1,7 @@
 // Pure game rules: see docs/wayfinder tickets 007 (rules), 009 (flow) and 010 (repeat avoidance).
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
-export type Mode = 'undercover' | 'blank';
+export type Mode = 'undercover' | 'spy';
 
 export interface Pair {
   id: string;
@@ -26,8 +26,7 @@ export interface Round {
   categoryId: string;
   categoryName: string;
   civilianWord: string;
-  /** null in Blank mode: imposters get no word. */
-  imposterWord: string | null;
+  imposterWord: string;
   mode: Mode;
   /** Indexes into the player list. */
   imposters: number[];
@@ -115,10 +114,6 @@ export function deal(opts: {
   const [civilianWord, otherWord] = flip ? [pair.words[1], pair.words[0]] : pair.words;
   const imposters = sample(imposterCount, players, rng);
 
-  // In Blank mode an imposter never speaks first.
-  const speakers = Array.from({ length: players }, (_, i) => i).filter(
-    (i) => mode === 'undercover' || !imposters.includes(i),
-  );
 
   return {
     round: {
@@ -126,10 +121,10 @@ export function deal(opts: {
       categoryId: category.id,
       categoryName: category.name,
       civilianWord,
-      imposterWord: mode === 'blank' ? null : otherWord,
+      imposterWord: otherWord,
       mode,
       imposters,
-      firstSpeaker: pick(speakers, rng),
+      firstSpeaker: Math.floor(rng() * players),
     },
     history: [...history, pair.id],
     reshuffled,

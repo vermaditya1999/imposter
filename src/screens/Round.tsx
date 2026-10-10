@@ -66,7 +66,6 @@ export function Reveal({
 }) {
   const [step, setStep] = useState(0);
   const many = round.imposters.length > 1;
-  const blank = round.mode === 'blank';
   const look = lookFor(round.categoryId);
 
   return (
@@ -114,13 +113,12 @@ export function Reveal({
               <strong>{round.civilianWord}</strong>
               <Mascot shape={look.shape} color={look.body} mood="happy" size={64} class="card-mascot" />
             </div>
-            <div class={`word-card imp ${blank ? 'blank' : ''}`}>
+            <div class="word-card imp">
               <small>{many ? 'Imposters had' : 'Imposter had'}</small>
-              <strong>{blank ? 'Nothing' : round.imposterWord}</strong>
-              <Mascot shape="ghost" color={blank ? C.purple : C.sky} mood="sneaky" size={64} class="card-mascot" />
+              <strong>{round.imposterWord}</strong>
+              <Mascot shape="ghost" color={C.sky} mood="sneaky" size={64} class="card-mascot" />
             </div>
           </div>
-          {blank && <p class="last-guess">Caught? The imposter gets one Last Guess at the civilians' word. Right = imposters win.</p>}
           <div class="reveal-actions">
             <Btn variant="teal" icon="refresh" class="btn-xl" onClick={onNextRound}>
               Next round

@@ -82,11 +82,11 @@ describe('deal', () => {
     expect(deal({ ...base, players: 4, imposterCount: 3 }).round.imposters).toHaveLength(1);
   });
 
-  it('gives blank-mode imposters no word and never lets them speak first', () => {
+  it('gives spy-mode imposters the other word of the Pair', () => {
     for (let i = 0; i < 100; i++) {
-      const { round } = deal({ ...base, mode: 'blank' });
-      expect(round.imposterWord).toBeNull();
-      expect(round.imposters).not.toContain(round.firstSpeaker);
+      const { round } = deal({ ...base, mode: 'spy' });
+      expect(round.imposterWord).not.toBe(round.civilianWord);
+      expect(round.imposterWord).toBeTruthy();
     }
   });
 

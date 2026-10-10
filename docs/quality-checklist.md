@@ -21,14 +21,14 @@ When the curator rejects or edits a Pair, they record the criterion ID that fail
 | QC-08 | **Fits its Category.** The Pair is the same kind of thing as the rest of its Category and is filed in the right one. | Curator |
 | QC-09 | **Unique words.** A word appears in exactly one Pair across the whole Dataset, case-insensitive. No word may be another word plus a modifier (Paratha and Aloo Paratha, Pakora and Bread Pakora). Sharing a token is fine when the dishes are different (Vada Pav, Medu Vada). No exceptions in v1. *(Modifier rule added after the pilot.)* | Machine |
 | QC-10 | **Phrasing.** British/Indian spelling (Colour, Aeroplane), Title Case, singular unless the common name is plural (Momos, Chole), no articles, ≤ 2 words unless the common name is longer. One spelling per Indian term: the most common in the group. | Machine (spelling via allow-list) |
-| QC-14 | **Not a giveaway.** For *each* word (either can be the Civilian Word), Civilians can give at least three safe clues that a Blank-mode imposter couldn't use to name the word outright. A word that one obvious clue gives away fails, because it makes the Last Guess trivial and forces Civilians into clues so vague that nobody can be caught. *(Added 2026-10-09 from the user's dataset research.)* Typical failures: a word known for one single thing (Agra → Taj Mahal, Giraffe → long neck), or the only well-known member of its kind (Maggi). | Curator; audited |
+| QC-14 | **Not a giveaway.** For *each* word (either can be the Civilian Word), Civilians can give at least three safe clues that an imposter couldn't use to name the word outright. A word that one obvious clue gives away fails, because it forces Civilians into clues so vague that nobody can be caught. *(Added 2026-10-09 from the user's dataset research. Reworded 2026-10-10 when Spy mode replaced Blank mode and the Last Guess was dropped.)* Typical failures: a word known for one single thing (Agra → Taj Mahal, Giraffe → long neck), or the only well-known member of its kind (Maggi). | Curator; audited |
 | QC-15 | **Same kind, not a set.** Both words are the same kind of thing (two dishes, not a sauce and a dish; two breads, not bread and a side), and they are not two halves of one set whose clues imply each other (Lock/Key, Cup/Saucer). Applies to every tier, Easy included. *(Added 2026-10-10 from the v1 audit.)* | Curator; audited |
 
 ## Category criteria
 
 | ID | Criterion | Check |
 |---|---|---|
-| QC-11 | **One kind of thing.** All Pairs in a Category are the same kind of thing (all foods, all places), and the Category name alone tells a Blank-mode imposter what kind of word to bluff. | Curator |
+| QC-11 | **One kind of thing.** All Pairs in a Category are the same kind of thing (all foods, all places), and the Category name alone tells a player what kind of word is in play. | Curator |
 | QC-12 | **Deep enough.** ~30 Pairs without strain, repetition or obscurity. | Machine (count) / Curator (strain) |
 | QC-13 | **Difficulty mix.** Roughly a third per tier, at least 8 Pairs per tier. | Machine |
 

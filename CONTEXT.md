@@ -4,15 +4,15 @@
 
 **Civilian Word**: The word shown to every non-imposter player in a round. A role assigned per Round: either word of a Pair can take it.
 
-**Imposter Word**: The word shown to the imposter(s) in Undercover mode. Close enough to the Civilian Word to let them blend in, different enough to be caught.
+**Imposter Word**: The word shown to the imposter(s). Close enough to the Civilian Word to let them blend in, different enough to be caught.
 
 **Civilian**: A player who received the Civilian Word.
 
-**Imposter**: A player who did not receive the Civilian Word — they got the Imposter Word (Undercover mode) or nothing (Blank mode).
+**Imposter**: A player who received the Imposter Word instead of the Civilian Word.
 
-**Undercover mode**: The default game mode: imposters receive the Imposter Word.
+**Undercover mode**: The default game mode: imposters receive the Imposter Word and are not told they are imposters.
 
-**Blank mode**: A setting in which imposters receive no word at all.
+**Spy mode**: A game mode in which imposters receive the Imposter Word and are told they are imposters. Replaced Blank mode (imposters got no word).
 
 **Category**: A themed group of Pairs (e.g. Food, Places). Players choose which categories are in play.
 
@@ -21,8 +21,6 @@
 **Difficulty**: A per-Pair tag — Easy, Medium or Hard — describing how close the Pair's two words are (closer = harder), never how obscure they are.
 
 **Round**: One play-through: words dealt, discussion, verbal vote, reveal.
-
-**Last Guess**: The one guess at the Civilian Word given to a Blank-mode imposter who has been voted out; a correct guess wins the Round for the imposters.
 
 **Pass-and-play**: All players share one phone, passing it around to see their word privately.
 

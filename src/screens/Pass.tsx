@@ -61,7 +61,7 @@ function PeekCard({
     };
   }, []);
 
-  const blank = isImposter && round.mode === 'blank';
+  const spy = isImposter && round.mode === 'spy';
   const word = isImposter ? round.imposterWord : round.civilianWord;
 
   const holdHandlers = tapToReveal
@@ -100,17 +100,17 @@ function PeekCard({
 
       {open ? (
         <div class="peek-reveal" aria-live="assertive">
-          <Mascot shape={blank ? 'ghost' : look.shape} color={blank ? C.purple : look.body} mood={blank ? 'sneaky' : 'shocked'} size={128} class="peek-mascot" />
-          {blank ? (
+          <Mascot shape={spy ? 'ghost' : look.shape} color={spy ? C.purple : look.body} mood={spy ? 'sneaky' : 'shocked'} size={128} class="peek-mascot" />
+          {spy ? (
             <div class="word-bubble imposter">
-              <small>You're the</small>
-              <strong class="word lg">Imposter</strong>
-              <span class="word-hint">No word for you. Blend in.</span>
+              <small>You're the imposter</small>
+              <strong class={`word ${wordSize(word)}`}>{word}</strong>
+              <span class="word-hint">The others have a word close to this. Blend in.</span>
             </div>
           ) : (
             <div class="word-bubble">
               <small>Your word</small>
-              <strong class={`word ${wordSize(word ?? '')}`}>{word}</strong>
+              <strong class={`word ${wordSize(word)}`}>{word}</strong>
             </div>
           )}
         </div>

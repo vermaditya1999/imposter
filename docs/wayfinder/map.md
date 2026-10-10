@@ -15,7 +15,7 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - Skills to consult: `grilling` + `domain-modeling` for grilling tickets; `prototype` for prototype tickets; `research` for research tickets.
 - Planning by default, **except the dataset**: authoring the v1 pairs is part of this map's destination (execution allowed there). The app itself is built after the map closes.
 - Standing decisions (from charting, 2026-10-09):
-  - Game mode: **Undercover** (imposter gets a similar-but-different word); **Blank mode** (imposter gets nothing) is a setting.
+  - Game mode: **Undercover** (imposter gets a similar-but-different word); **Blank mode** (imposter gets nothing) is a setting. *Changed 2026-10-10 from player feedback: Blank mode replaced by **Spy mode** (imposter gets the Imposter Word and is told they're the imposter); Spies may speak first; the Last Guess is gone.*
   - **Pass-and-play** on one phone. No backend, no accounts.
   - Audience: the user's friend group first; keep a store release possible but don't plan for it yet.
   - Platforms: **web app / PWA only** (changed 2026-10-09 by the user: no native apps, no Apple Developer Program). Played in the phone browser or installed to the home screen.

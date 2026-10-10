@@ -34,7 +34,9 @@ let toastId = 0;
 
 export function App() {
   const [settings, setSettings] = useState(() => {
-    const s = loadSettings(DEFAULTS);
+    const loaded = loadSettings(DEFAULTS);
+    // Blank mode was replaced by Spy mode.
+    const s: Settings = (loaded.mode as string) === 'blank' ? { ...loaded, mode: 'spy' } : loaded;
     // Difficulty is one tier or Mixed (all three).
     return s.difficulties.length === 1 ? s : { ...s, difficulties: DEFAULTS.difficulties };
   });
@@ -240,7 +242,7 @@ function HowToPlay() {
           <span>2</span>
           <p>
             <strong>The imposter's word is a little different</strong> — and in Undercover mode, they don't know they're the imposter. In
-            Blank mode they get no word at all.
+            Spy mode they're told.
           </p>
         </li>
         <li>
@@ -255,12 +257,6 @@ function HowToPlay() {
           <p>
             <strong>Vote out loud</strong>, then tap Reveal. If the most-voted player is an imposter, civilians win. Otherwise the imposters
             win.
-          </p>
-        </li>
-        <li>
-          <span>5</span>
-          <p>
-            <strong>Last Guess (Blank mode):</strong> a caught imposter gets one guess at the civilians' word. Right = imposters win.
           </p>
         </li>
       </ol>
