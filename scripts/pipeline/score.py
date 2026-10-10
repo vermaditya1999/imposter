@@ -47,7 +47,7 @@ def weakness(r):
 ap = argparse.ArgumentParser()
 ap.add_argument("results"); ap.add_argument("--out", required=True); ap.add_argument("--prompt", default="v3")
 ap.add_argument("--drafts", action="append", default=[]); ap.add_argument("--weakest", type=float, default=0.10)
-ap.add_argument("--model", default="sonnet (Claude Code subagent)")
+ap.add_argument("--model", default="haiku 5.5 (Claude Code subagent)")
 ap.add_argument("--partial", action="store_true", help="a re-check of chosen ids: skip the coverage warning")
 a = ap.parse_args()
 

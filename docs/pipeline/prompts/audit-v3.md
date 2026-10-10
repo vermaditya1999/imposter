@@ -1,6 +1,6 @@
 # Adversarial audit prompt (v3)
 
-Given to the blind evaluator: a fresh Sonnet session (a Claude Code subagent, `model: sonnet`) with
+Given to the blind evaluator: a fresh Haiku 5.5 session (a Claude Code subagent, `model: haiku`) with
 one input file from `scripts/pipeline/blind.py`. The evaluator never sees a Pair's `difference`,
 `difficulty` or curation log. It doesn't decide keep or drop. `scripts/pipeline/score.py` applies the
 pass/fail rules against each Pair's stored tier, so a close Hard Pair isn't punished for the closeness

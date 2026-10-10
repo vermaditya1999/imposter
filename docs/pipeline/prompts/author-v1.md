@@ -1,7 +1,7 @@
 # Authoring prompt (v1)
 
 How the authoring session drafts candidates for a Category (a new theme, or a top-up of an existing
-one). The author is the main Claude Code session (Opus). It writes candidates to
+one). The author is the main Claude Code session (Sonnet 5.5; Opus until 2026-10-10). It writes candidates to
 `dataset/drafts/<category-id>.json`. Distilled from the [pilot batch](../../wayfinder/tickets/008-pilot-category-batch.md)
 and the [v1 audit](../../curation/audit-v1.json).
 

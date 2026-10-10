@@ -2,7 +2,8 @@
 
 How Pairs are generated, checked and changed. Use it to add a new theme (Category), top up an existing
 one, or audit the whole Dataset. Everything runs inside a Claude Code session with no API keys: the
-session itself is the **author** and **curator**, and fresh Sonnet subagents are the blind **evaluators**.
+session itself (Sonnet 5.5) is the **author** and **curator**, and fresh Haiku 5.5 subagents are the blind
+**evaluators**. Opus isn't needed for this work; switched 2026-10-10 to cut token spend.
 
 ## Why it's shaped this way
 
@@ -23,8 +24,8 @@ added a judge that hadn't seen the author's reasoning. What it showed:
 
 | Role | Who | Sees |
 |---|---|---|
-| Author | The main session (Opus) | Checklist, glossary, every existing word |
-| Evaluator | A fresh subagent per input file, `model: sonnet` | One [audit prompt](prompts/audit-v3.md) and one blind input file. Nothing else. |
+| Author | The main session (Sonnet 5.5, `claude-sonnet-5-5`) | Checklist, glossary, every existing word |
+| Evaluator | A fresh subagent per input file, `model: haiku` (Haiku 5.5) | One [audit prompt](prompts/audit-v3.md) and one blind input file. Nothing else. |
 | Curator | The main session, *after* scoring | Scores, then the curation logs and the stored `difference` |
 | Machine | [check_dataset.py](../../scripts/check_dataset.py) | Everything; runs in `npm run build` and fails the build on any error |
 
@@ -49,14 +50,14 @@ added a judge that hadn't seen the author's reasoning. What it showed:
 
 ```
 draft ──► pre-check ──► blind audit ──► score ──► curate ──► apply ──► blind re-check ──► machine checks ──► commit
-(author)  (QC-09/10)    (Sonnet ×N)     (rules)   (author)   (ids,    (changed Pairs      (check, test,
+(author)  (QC-09/10)    (Haiku ×N)      (rules)   (author)   (ids,    (changed Pairs      (check, test,
                                                              logs)     only; loop)         build)
 ```
 
 1. **Draft.** The author follows [author-v1](prompts/author-v1.md) and writes ~1.5× the needed Pairs to the drafts file.
 2. **Pre-check.** `blind.py --drafts` reports duplicate words, modifier clashes and phrasing errors against
    the whole Dataset. Fix or drop those before spending evaluator time on them.
-3. **Blind audit.** One fresh Sonnet subagent per input file, in parallel, using the evaluator brief below.
+3. **Blind audit.** One fresh Haiku subagent per input file, in parallel, using the evaluator brief below.
 4. **Score.** `score.py` writes `docs/curation/audit-<run>.json` and prints the worklist: every failing
    Pair, plus the weakest 10% of the passing ones.
 5. **Curate.** Only now does the curator read the logs and the stored `difference`. For each worklist
@@ -156,7 +157,7 @@ python3 scripts/pipeline/blind.py .pipeline/$RUN/recheck --ids <changed ids>
 
 ### Evaluator brief (paste into the subagent call)
 
-Spawn with `subagent_type: general-purpose`, `model: sonnet`, all evaluators in one message so they
+Spawn with `subagent_type: general-purpose`, `model: haiku`, all evaluators in one message so they
 run in parallel:
 
 > Read exactly two files and nothing else in the repository (no dataset, docs, curation logs or
@@ -189,6 +190,9 @@ doesn't exist. Run each audit under a heading of its own, and run `--dry-run` fi
 - **Author and evaluator are both Claude.** Blindness and a different model reduce shared bias but don't
   remove it. Real play is the final judge: when the group trips on a Pair, log it in the Category's
   curation log and change it through `apply.py`.
+- **The score.py thresholds were set on Sonnet's scores (audits v1–v2).** Haiku may score on a different
+  scale. On the first Haiku run, compare a Category's scores against [audit-v2](../curation/audit-v2.json)
+  before trusting the worklist, and retune `TIER_RULES` if the fail rate jumps or collapses.
 - **QC-04 (familiarity) is a guess about one friend group's regional mix.** The evaluator is told the
   audience, but no model knows it. The curation logs list the regional words to cut first.
 - **Prompts are versioned.** Never edit a prompt in place after a run has used it: copy it to the next
