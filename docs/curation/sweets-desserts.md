@@ -41,7 +41,7 @@ Black Forest and Red Velvet are named without the word "Cake", because QC-09 for
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -64,3 +64,17 @@ Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator
 | Kalakand / Milk Cake (`en-0130`) | replace → **Ice Gola / Slush** (Hard, `en-0130`) | Kalakand / Milk Cake failed the blind re-check as too close and Milk Cake isn't known to the whole group (QC-02, QC-04). |
 | Ice Gola / Slush (`en-0130`) | replace → **Ice Gola / Milkshake** (Medium, `en-0130`) | Ice Gola / Slush failed the second blind check as too close (QC-02). Retagged Medium. |
 | Ice Gola / Milkshake (`en-0130`) | keep (third check) | The evaluator scored bluffable 4, which is not below the keep threshold, and listed three shared clues (cold, sweet, best in summer), so it passes QC-03. |
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Meetha Paan / Mukhwas (Easy, `en-0127`) | QC-01 → **Meetha Paan / Mukhwas (Medium, `en-0127`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Mousse / Fruit Salad (Medium, `en-0120`) | QC-01 → **Mousse / Fruit Salad (Easy, `en-0120`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Kulfi / Ice Cream (Hard, `en-0109`) | QC-02 → **Kulfi / Softy (Hard, `en-0131`)** | Kulfi is often called a kind of ice cream. Softy keeps the frozen-milk-treat overlap without the subset. |
+| Pastry / Swiss Roll (Medium, `en-0116`) | QC-02 → **Swiss Roll / Cream Roll (Hard, `en-0132`)** | Pastry is a broad term that covers Swiss Roll. Cream Roll is the Indian-bakery sibling. Retagged Hard. |
+| Macaron / Cookie (Easy, `en-0126`) | QC-02 → **Cookie / Ice Cream (Easy, `en-0133`)** | Macaron is a kind of cookie and less familiar. Ice Cream left Kulfi's Pair. |
+| Barfi / Fudge (Hard, `en-0110`) | keep | Hard. Barfi is not a kind of fudge; khoya vs cocoa and butter is the telling difference. |
+| Butterscotch / Tutti Frutti (Hard, `en-0111`) | keep | Both are ice-cream and cake flavours, so they're the same kind; caramel bits vs coloured fruit bits. |

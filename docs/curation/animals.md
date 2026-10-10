@@ -37,7 +37,7 @@ Mouse is used here, so Gadgets must not use "Mouse" (computer mouse). The Cow is
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -53,3 +53,16 @@ Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Son
 ### Blind re-check of the changes
 
 Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Pigeon / Crow (Hard, `en-0309`) | QC-01 → **Pigeon / Crow (Medium, `en-0309`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Octopus / Crab (Medium, `en-0311`) | QC-01 → **Octopus / Crab (Easy, `en-0311`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Hen / Rooster (Hard, `en-0332`) | QC-15 → **Ant / Termite (Hard, `en-0334`)** | A Hen and a Rooster are the female and male of one bird, so they work like a set. |
+| Sheep / Goat (Hard, `en-0310`) | keep | The animals aren't unsafe; the wool vs beard clues are neutral, and no clue has to touch a festival. |
+| Cow / Buffalo (Medium, `en-0321`) | keep | Cows and buffaloes are everyday Indian animals; neutral clues (colour, wallowing, milk) carry the Round. |
+| Cat / Mouse (Easy, `en-0322`) | keep | Easy by design: predator and prey, like the Fox/Rabbit Pair the evaluator passed. Not a set. |

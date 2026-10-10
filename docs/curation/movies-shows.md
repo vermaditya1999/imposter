@@ -39,8 +39,22 @@ Franchise and show titles reserved here, so Characters must not use them: Harry 
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
 | Golmaal / Dhamaal (Hard, `en-0804`) | keep (weakest 10%) | Both are huge comedy franchises; the ensemble vs treasure-hunt split works. |
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Sholay / Deewar (Hard, `en-0801`) | QC-01 → **Sholay / Deewar (Medium, `en-0801`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Kota Factory / Panchayat (Hard, `en-0810`) | QC-01 → **Kota Factory / Panchayat (Medium, `en-0810`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Titanic / Avatar (Medium, `en-0815`) | QC-01 → **Titanic / Avatar (Easy, `en-0815`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Stranger Things / Squid Game (Medium, `en-0818`) | QC-01 → **Stranger Things / Squid Game (Easy, `en-0818`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Finding Nemo / Toy Story (Medium, `en-0821`) | QC-01 → **Finding Nemo / Toy Story (Easy, `en-0821`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Taarak Mehta / CID (Easy, `en-0822`) | keep | Easy. Both are long-running family TV shows with famous catchphrases, which gives three shared clues. |
+| Mr. Bean / Home Alone (Easy, `en-0825`) | keep | Easy. Both are slapstick comedies; TV vs film doesn't stop the shared clues. |

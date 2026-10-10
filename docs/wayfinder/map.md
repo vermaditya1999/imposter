@@ -25,7 +25,7 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
   - v1 features: player names, imposter count, category selection, pass-to-reveal (hold to peek), final reveal. Voting is verbal. **No discussion timer** (dropped 2026-10-09 by the user).
   - **Quality bar — none of these may regress in the dataset:** words too obscure or too easy (untagged); categories too broad or too narrow; pairs too obvious or nonsensical; culturally off for the group; too few words / repetition; bad translation or awkward phrasing.
 - 2026-10-09: the user delegated the Pair schema, v1 Category list and game rules grillings to Claude ("approve all of them, I trust you"). Those resolutions are Claude's calls, so revisit them freely.
-- **Dataset v1 is complete:** 410 Pairs across 14 Categories in `dataset/en/`, checked by `scripts/check_dataset.py`. Pair ids were renumbered freely while authoring and **freeze at the first release**. After that, new Pairs only ever append.
+- **Dataset v1 is complete:** 408 Pairs across 14 Categories in `dataset/en/`, checked by `scripts/check_dataset.py`. Ids **froze at the first release** (the 2026-10-09 GitHub Pages deploy). Changing a released Pair's words retires its id; retired ids are listed in `dataset/categories.json`. **All dataset work goes through the [dataset pipeline](../pipeline/README.md).**
 - 2026-10-09: the user carried execution into the map ("let's build the game now"). The decisions stay in their tickets; there's no separate spec document.
 - **The v1 app is built** (2026-10-09): `npm run dev` to play, `npm run build` for `dist/`. See [Task: build the v1 app](tickets/027-build-v1-app.md).
 - Research notes are written to `docs/research/<slug>.md` (not throwaway branches — the repo has no commits yet).
@@ -60,11 +60,12 @@ A build-ready **spec** for a pass-and-play imposter (Undercover-style) **web app
 - [Task: author and curate Gadgets](tickets/023-author-gadgets.md): 28 Pairs, all Machine checks pass
 - [Grilling: what the build-ready spec contains and where it lives](tickets/026-spec-handoff.md): no separate spec; build straight from the tickets; visual identity comes from the user's reference
 - [Task: adversarial audit of the v1 Dataset](tickets/025-adversarial-audit.md): a blind Sonnet audit flagged 48/410 Pairs; 35 Pairs changed, every change re-checked blind; the tier-blind prompt over-flags Hard Pairs
+- [Task: a reusable pipeline for generating and checking Pairs](tickets/028-dataset-pipeline.md): blind Sonnet evaluator scores, `score.py` applies tier-aware rules, `apply.py` handles ids and logs; first run (audit v2) changed 51 Pairs (23 new words, 28 retiered) and removed 2 → 408 Pairs
 
 ## Not yet specified
 
 - **Scoring across rounds** and **custom/user-added words** — maybe-v1.x features, parked until the core flow is settled.
-- **Scaling the Dataset past v1** — the user's research funnel (generate many candidates, then filter, clue-space evaluation, adversarial evaluation and diversity selection), learning from real play. Only if 410 Pairs runs out for the group.
+- **Scaling the Dataset past v1** — *the pipeline now exists ([Task: a reusable pipeline for generating and checking Pairs](tickets/028-dataset-pipeline.md)).* Still open: which new themes to add, and how to feed real-play feedback back in.
 - **Hosting** — GitHub Pages (needs a public repo) or Cloudflare Pages, plus the URL friends open; see the PWA research.
 
 ## Out of scope

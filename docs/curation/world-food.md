@@ -41,7 +41,7 @@ Condiments (Ketchup, Mustard, Salsa, Mayonnaise) are included as accompaniments,
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -61,3 +61,16 @@ Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator
 |---|---|---|
 | Sausage / Salami (`en-0230`) | replace → **Meatballs / Sausage** (Medium, `en-0230`) | Sausage / Salami failed the blind re-check: Salami is a kind of sausage (QC-02). Retagged Medium. |
 | Barbecue / Fondue (`en-0232`) | replace → **Barbecue / Buffet** (Easy, `en-0232`) | Barbecue / Fondue failed the blind re-check: Fondue isn't known to the whole group (QC-04). |
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Kimchi / Coleslaw (Hard, `en-0206`) | QC-01 → **Kimchi / Coleslaw (Medium, `en-0206`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Ramen / Pad Thai (Medium, `en-0217`) | QC-01 → **Ramen / Pad Thai (Easy, `en-0217`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Thai Curry / Satay (Medium, `en-0218`) | QC-01 → **Thai Curry / Satay (Easy, `en-0218`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Dim Sum / Spring Roll (Medium, `en-0210`) | QC-02 → **Dumplings / Spring Roll (Medium, `en-0233`)** | A Spring Roll can be served as dim sum, so Dim Sum was the umbrella term. |
+| Soup / Steak (Easy, `en-0231`) | QC-06 → **Popcorn / Pretzel (Easy, `en-0234`)** | Steak means beef, which is awkward for many Indian families, and Soup/Steak shared almost nothing. |
+| Barbecue / Buffet (Easy, `en-0232`) | remove: QC-15 | Barbecue and Buffet are ways of eating, not dishes, so the Pair doesn't fit World Food. Removed; the Category stays at 28. |

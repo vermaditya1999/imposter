@@ -1,0 +1,772 @@
+{
+ "prompt_version": "v2",
+ "model": "sonnet (Claude Code subagent)",
+ "blind": true,
+ "rules": {
+  "tier": {
+   "hard": [
+    4,
+    6,
+    5,
+    "QC-01"
+   ],
+   "medium": [
+    5,
+    5,
+    4,
+    "QC-03"
+   ],
+   "easy": [
+    5,
+    4,
+    3,
+    "QC-03"
+   ]
+  },
+  "all": "giveaway_risk>=7, one_sided>=7, familiarity<6, kind_of, is_set, not same_kind, unsafe, misfiled, tier_guess two tiers off"
+ },
+ "summary": {
+  "pairs": 23,
+  "fail": 0,
+  "weak": 0
+ },
+ "pairs": [
+  {
+   "id": "en-0131",
+   "category": "sweets-desserts",
+   "words": [
+    "Kulfi",
+    "Softy"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 7,
+    "bluffable": 5,
+    "giveaway_risk": 3,
+    "synonym_risk": 2,
+    "one_sided": 2,
+    "familiarity": 9
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 16,
+   "note": "Both are frozen creamy treats sold at carts; the telling difference is dense kulfi on a stick or in a matka versus machine-swirled softy in a cone.",
+   "evidence": {
+    "clue_A_not_B": "Dense and slow-frozen, comes on a stick or in a matka",
+    "clue_B_not_A": "Squeezed from a machine in a swirl into a cone",
+    "shared_clue": "Cold, creamy and sold at roadside stalls"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0132",
+   "category": "sweets-desserts",
+   "words": [
+    "Swiss Roll",
+    "Cream Roll"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 5,
+    "bluffable": 6,
+    "giveaway_risk": 3,
+    "synonym_risk": 5,
+    "one_sided": 2,
+    "familiarity": 7
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "hard",
+   "fails": [],
+   "weakness": 22,
+   "note": "Both are bakery rolls with cream and the names get mixed up; the key difference is a sponge cake rolled round jam/cream versus a flaky pastry horn or roll filled with cream.",
+   "evidence": {
+    "clue_A_not_B": "Soft sponge cake sliced into spiral rounds",
+    "clue_B_not_A": "Flaky layered pastry shell stuffed with cream",
+    "shared_clue": "Sweet, creamy and bought from a bakery"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0133",
+   "category": "sweets-desserts",
+   "words": [
+    "Cookie",
+    "Ice Cream"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 9,
+    "bluffable": 3,
+    "giveaway_risk": 3,
+    "synonym_risk": 1,
+    "one_sided": 1,
+    "familiarity": 10
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "easy",
+   "fails": [],
+   "weakness": 13,
+   "note": "Loosely related desserts; the first clue (crunchy and baked vs cold and melting) exposes the imposter.",
+   "evidence": {
+    "clue_A_not_B": "Baked and crunchy, goes well dunked in milk",
+    "clue_B_not_A": "Melts if you leave it out, served in a scoop",
+    "shared_clue": "Sweet and kids love it"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0233",
+   "category": "world-food",
+   "words": [
+    "Dumplings",
+    "Spring Roll"
+   ],
+   "tier": "medium",
+   "scores": {
+    "distinguishing": 6,
+    "bluffable": 6,
+    "giveaway_risk": 3,
+    "synonym_risk": 3,
+    "one_sided": 2,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 18,
+   "note": "Both are East-Asian-style stuffed snacks; distinguishing rests on steamed dough pockets versus fried rolled wrappers, though fried dumplings blur it.",
+   "evidence": {
+    "clue_A_not_B": "Steamed pockets of dough, often served in a basket",
+    "clue_B_not_A": "Crispy rolled wrapper fried until golden",
+    "shared_clue": "Filled with vegetables and eaten with a chilli sauce"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0234",
+   "category": "world-food",
+   "words": [
+    "Popcorn",
+    "Pretzel"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 8,
+    "bluffable": 4,
+    "giveaway_risk": 4,
+    "synonym_risk": 1,
+    "one_sided": 2,
+    "familiarity": 6
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "easy",
+   "fails": [],
+   "weakness": 19,
+   "note": "Different snacks; popcorn is the obvious cinema snack while pretzel is less familiar in India, which may hurt the Pretzel holder.",
+   "evidence": {
+    "clue_A_not_B": "Eaten at the cinema from a big tub",
+    "clue_B_not_A": "Twisted into a knot shape and sprinkled with salt",
+    "shared_clue": "Salty crunchy snack"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0334",
+   "category": "animals",
+   "words": [
+    "Ant",
+    "Termite"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 5,
+    "bluffable": 7,
+    "giveaway_risk": 3,
+    "synonym_risk": 4,
+    "one_sided": 2,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "hard",
+   "fails": [],
+   "weakness": 19,
+   "note": "Similar social insects with colonies; termites eat wood and build mounds ('white ants'), ants are the generic ones, so clues overlap heavily.",
+   "evidence": {
+    "clue_A_not_B": "Marches in a line to carry crumbs and sugar",
+    "clue_B_not_A": "Eats wooden furniture and doors",
+    "shared_clue": "Lives in a large colony with a queen"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0431",
+   "category": "places-around-town",
+   "words": [
+    "Bank",
+    "Post Office"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 6,
+    "bluffable": 6,
+    "giveaway_risk": 2,
+    "synonym_risk": 2,
+    "one_sided": 1,
+    "familiarity": 10
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 13,
+   "note": "Both are counter-service government-style places for forms and money; stamps, letters and parcels vs loans and ATM separate them.",
+   "evidence": {
+    "clue_A_not_B": "You go there for a loan or an ATM",
+    "clue_B_not_A": "You go there to send a letter or a parcel",
+    "shared_clue": "Queue at a counter and fill a form"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0432",
+   "category": "places-around-town",
+   "words": [
+    "Fire Station",
+    "Bus Depot"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 8,
+    "bluffable": 3,
+    "giveaway_risk": 3,
+    "synonym_risk": 1,
+    "one_sided": 1,
+    "familiarity": 9
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "easy",
+   "fails": [],
+   "weakness": 15,
+   "note": "Both house large vehicles, but sirens and emergencies versus routes and passengers expose the imposter at the first clue.",
+   "evidence": {
+    "clue_A_not_B": "Siren blares and crew rushes out in an emergency",
+    "clue_B_not_A": "Conductors and drivers start routes with passengers",
+    "shared_clue": "Big vehicles parked in rows"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0433",
+   "category": "places-around-town",
+   "words": [
+    "Dhaba",
+    "Food Truck"
+   ],
+   "tier": "medium",
+   "scores": {
+    "distinguishing": 7,
+    "bluffable": 5,
+    "giveaway_risk": 3,
+    "synonym_risk": 1,
+    "one_sided": 2,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 16,
+   "note": "Both are casual food stops; dhaba is a fixed highway eatery with charpai seating while a food truck is a vehicle that moves.",
+   "evidence": {
+    "clue_A_not_B": "Highway stop with charpai seating and truckers",
+    "clue_B_not_A": "Drives to a new spot and serves from a window",
+    "shared_clue": "Cheap, casual food eaten outdoors"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0531",
+   "category": "travel-destinations",
+   "words": [
+    "Kerala",
+    "Rajasthan"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 9,
+    "bluffable": 3,
+    "giveaway_risk": 4,
+    "synonym_risk": 0,
+    "one_sided": 1,
+    "familiarity": 10
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 13,
+   "note": "Two very different Indian states; backwaters and coconut vs deserts and forts give many easy clues.",
+   "evidence": {
+    "clue_A_not_B": "Backwaters, houseboats and coconut trees",
+    "clue_B_not_A": "Desert, camels and old forts and palaces",
+    "shared_clue": "Popular domestic holiday state"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0532",
+   "category": "travel-destinations",
+   "words": [
+    "Bhutan",
+    "Vietnam"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 8,
+    "bluffable": 4,
+    "giveaway_risk": 3,
+    "synonym_risk": 0,
+    "one_sided": 1,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 14,
+   "note": "Both are Asian countries but quite different; Himalayan kingdom and monasteries vs beaches, motorbikes and pho.",
+   "evidence": {
+    "clue_A_not_B": "Mountain kingdom with monasteries and no need for a visa for Indians",
+    "clue_B_not_A": "Coastline, motorbikes and pho noodles",
+    "shared_clue": "Asian country with lovely scenery"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0630",
+   "category": "jobs",
+   "words": [
+    "Teacher",
+    "Principal"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 5,
+    "bluffable": 8,
+    "giveaway_risk": 3,
+    "synonym_risk": 2,
+    "one_sided": 3,
+    "familiarity": 10
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "hard",
+   "fails": [],
+   "weakness": 15,
+   "note": "Both work in a school and clues overlap strongly; the difference is teaching a class versus running the school and disciplining students.",
+   "evidence": {
+    "clue_A_not_B": "Teaches a subject and checks homework in a class",
+    "clue_B_not_A": "Runs the whole school and gives suspensions",
+    "shared_clue": "Students are scared of them at school"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0631",
+   "category": "jobs",
+   "words": [
+    "News Anchor",
+    "RJ"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 6,
+    "bluffable": 6,
+    "giveaway_risk": 2,
+    "synonym_risk": 1,
+    "one_sided": 1,
+    "familiarity": 9
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 13,
+   "note": "Both talk to an audience for a living; screen and serious news vs radio and music banter.",
+   "evidence": {
+    "clue_A_not_B": "Reads headlines on camera in a studio",
+    "clue_B_not_A": "Plays songs and jokes on radio with only a voice",
+    "shared_clue": "Talks to a big audience every day"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0632",
+   "category": "jobs",
+   "words": [
+    "Singer",
+    "DJ"
+   ],
+   "tier": "medium",
+   "scores": {
+    "distinguishing": 6,
+    "bluffable": 6,
+    "giveaway_risk": 2,
+    "synonym_risk": 1,
+    "one_sided": 1,
+    "familiarity": 10
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 12,
+   "note": "Both are music performers; singing live with their own voice versus mixing tracks on decks.",
+   "evidence": {
+    "clue_A_not_B": "Sings with their own voice and a microphone",
+    "clue_B_not_A": "Mixes songs on a console with headphones",
+    "shared_clue": "Performs at weddings and parties"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0730",
+   "category": "sports-games",
+   "words": [
+    "Truth or Dare",
+    "Would You Rather"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 6,
+    "bluffable": 6,
+    "giveaway_risk": 3,
+    "synonym_risk": 1,
+    "one_sided": 2,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 16,
+   "note": "Both are friend-group party games of questions; dares and physical tasks versus choosing between two options.",
+   "evidence": {
+    "clue_A_not_B": "Someone gets challenged to do a silly task",
+    "clue_B_not_A": "You choose between two odd options",
+    "shared_clue": "Played in a circle at a sleepover or party"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0931",
+   "category": "characters",
+   "words": [
+    "Gandalf",
+    "Dumbledore"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 6,
+    "bluffable": 8,
+    "giveaway_risk": 3,
+    "synonym_risk": 2,
+    "one_sided": 1,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "hard",
+   "fails": [],
+   "weakness": 14,
+   "note": "Both are old bearded wizard mentors; Middle-earth, staff and Hobbits vs Hogwarts, wand and Harry.",
+   "evidence": {
+    "clue_A_not_B": "Carries a staff and travels with Hobbits",
+    "clue_B_not_A": "Heads a school and teaches Harry",
+    "shared_clue": "Old wise wizard with a long white beard"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0932",
+   "category": "characters",
+   "words": [
+    "Darth Vader",
+    "Optimus Prime"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 8,
+    "bluffable": 4,
+    "giveaway_risk": 3,
+    "synonym_risk": 0,
+    "one_sided": 1,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "easy",
+   "fails": [],
+   "weakness": 14,
+   "note": "Both are famous leaders with deep voices, but a dark masked Sith vs a truck-transforming robot hero separate them quickly.",
+   "evidence": {
+    "clue_A_not_B": "Wears a black mask and breathes heavily",
+    "clue_B_not_A": "Transforms into a truck",
+    "shared_clue": "Has a deep booming voice and leads others"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0933",
+   "category": "characters",
+   "words": [
+    "Ben 10",
+    "Johnny Bravo"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 8,
+    "bluffable": 3,
+    "giveaway_risk": 3,
+    "synonym_risk": 0,
+    "one_sided": 1,
+    "familiarity": 9
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 14,
+   "note": "Both are Cartoon Network characters; alien watch transformations vs a blond pompadour trying to impress women.",
+   "evidence": {
+    "clue_A_not_B": "Uses a watch to turn into aliens",
+    "clue_B_not_A": "Has big blond hair and sunglasses",
+    "shared_clue": "Cartoon on kids TV"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0934",
+   "category": "characters",
+   "words": [
+    "Chacha Chaudhary",
+    "Tenali Raman"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 7,
+    "bluffable": 5,
+    "giveaway_risk": 3,
+    "synonym_risk": 0,
+    "one_sided": 2,
+    "familiarity": 7
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 16,
+   "note": "Both are clever Indian storybook/comic figures; Chacha Chaudhary has a red turban and Sabu with a brain faster than a computer, Tenali Raman is a court jester in Vijayanagara.",
+   "evidence": {
+    "clue_A_not_B": "Has a red turban and Sabu the giant",
+    "clue_B_not_A": "Witty courtier who advises a king with funny stories",
+    "shared_clue": "Clever Indian character known for brains"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-0935",
+   "category": "characters",
+   "words": [
+    "Singham",
+    "Chulbul Pandey"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 6,
+    "bluffable": 8,
+    "giveaway_risk": 3,
+    "synonym_risk": 2,
+    "one_sided": 2,
+    "familiarity": 9
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "hard",
+   "fails": [],
+   "weakness": 14,
+   "note": "Both are swaggering Bollywood cops; Singham is Ajay Devgn's serious Maharashtra cop, Chulbul Pandey is Salman's quirky UP cop with collar-up sunglasses.",
+   "evidence": {
+    "clue_A_not_B": "Famous roar, Goa and Maharashtra setting",
+    "clue_B_not_A": "Sunglasses hooked on the collar, Uttar Pradesh",
+    "shared_clue": "Police uniform and tough fights"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-1032",
+   "category": "brands-apps",
+   "words": [
+    "Spotify",
+    "JioSaavn"
+   ],
+   "tier": "hard",
+   "scores": {
+    "distinguishing": 5,
+    "bluffable": 8,
+    "giveaway_risk": 5,
+    "synonym_risk": 2,
+    "one_sided": 3,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "hard",
+   "fails": [],
+   "weakness": 19,
+   "note": "Near-identical music streaming apps; most clues fit both. Distinguishing clues exist but are subtle (green logo and Wrapped vs Jio telecom tie-in and strong Bollywood/regional catalogue), and Spotify is the obvious global default.",
+   "evidence": {
+    "clue_A_not_B": "Its year-end Wrapped recap gets shared everywhere",
+    "clue_B_not_A": "It often comes bundled with a telecom recharge plan",
+    "shared_clue": "I use it for playlists and offline downloads"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-1033",
+   "category": "brands-apps",
+   "words": [
+    "Amul",
+    "Britannia"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 7,
+    "bluffable": 5,
+    "giveaway_risk": 5,
+    "synonym_risk": 1,
+    "one_sided": 2,
+    "familiarity": 10
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 16,
+   "note": "Both are everyday Indian food brands with overlap (butter, cheese, packaged foods), but Amul is dairy-led (milk, the girl mascot) while Britannia is biscuit/bread-led (Good Day, Marie). A blank-mode imposter could guess either from a milk or biscuit clue.",
+   "evidence": {
+    "clue_A_not_B": "You'd find it in the dairy aisle with a cartoon girl on the hoardings",
+    "clue_B_not_A": "It makes the biscuit you dunk in chai",
+    "shared_clue": "You'll find it in every kirana shop"
+   },
+   "worklist": null
+  },
+  {
+   "id": "en-1330",
+   "category": "gadgets",
+   "words": [
+    "Metal Detector",
+    "Smoke Detector"
+   ],
+   "tier": "easy",
+   "scores": {
+    "distinguishing": 7,
+    "bluffable": 5,
+    "giveaway_risk": 3,
+    "synonym_risk": 1,
+    "one_sided": 1,
+    "familiarity": 8
+   },
+   "kind_of": false,
+   "is_set": false,
+   "same_kind": true,
+   "safe": true,
+   "fits_category": true,
+   "tier_guess": "medium",
+   "fails": [],
+   "weakness": 15,
+   "note": "Both are beeping detectors; metal detectors are at security gates and treasure hunts, smoke detectors are on ceilings.",
+   "evidence": {
+    "clue_A_not_B": "Walk through it at an airport or mall entrance",
+    "clue_B_not_A": "Fixed to the ceiling and beeps when kitchen burns",
+    "shared_clue": "Beeps loudly to warn you"
+   },
+   "worklist": null
+  }
+ ],
+ "note": "Final blind re-check of every Pair whose words changed in the v2 audit (23 Pairs). Three rounds: Spotify/Duolingo and Cred/Zepto failed round 1; Zepto/Rapido failed round 2; this file holds the last verdict per Pair."
+}

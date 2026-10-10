@@ -32,7 +32,7 @@ Clothes & Accessories must avoid **Bag** (Bean Bag) and **Shoe** (Shoe Rack). Ga
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -44,3 +44,17 @@ Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Son
 ### Blind re-check of the changes
 
 Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Kettle / Flask (Hard, `en-1107`) | QC-01 → **Kettle / Flask (Medium, `en-1107`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Mixer Grinder / Toaster (Medium, `en-1110`) | QC-01 → **Mixer Grinder / Toaster (Easy, `en-1110`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Pressure Cooker / Kadai (Medium, `en-1111`) | QC-01 → **Pressure Cooker / Kadai (Easy, `en-1111`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Fridge / Microwave (Medium, `en-1112`) | QC-01 → **Fridge / Microwave (Easy, `en-1112`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Geyser / Inverter (Medium, `en-1121`) | QC-01 → **Geyser / Inverter (Easy, `en-1121`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Mirror / Window (Easy, `en-1127`) | keep | Easy. Both are glass things on a wall that you look into or through. |
+| Clock / Calendar (Easy, `en-1129`) | keep | Easy. Both are wall items that tell time. |

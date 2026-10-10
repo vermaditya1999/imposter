@@ -37,7 +37,7 @@ These pass QC-04 for a broadly urban Indian group, but they're regional. If the 
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -47,3 +47,13 @@ Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Son
 ### Blind re-check of the changes
 
 Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Roti / Paratha (Medium, `en-0015`) | keep | In Indian English a Roti is the plain phulka, not an umbrella for every flatbread; ghee and layers vs plain is a clean split. |
+| Pickle / Papad (Easy, `en-0022`) | keep | Easy. Both are meal accompaniments (same kind); soft and tangy vs thin and crunchy. |
+| Keema / Palak Paneer (Easy, `en-0026`) | keep | Easy. The evaluator itself calls both North Indian curries. |

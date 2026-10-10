@@ -7,7 +7,7 @@ and find the imposter.
 **Play:** [vermaditya1999.github.io/imposter](https://vermaditya1999.github.io/imposter/). It installs to the home screen as a PWA
 and works offline.
 
-- 410 hand-curated word pairs across 14 categories, each tagged Easy, Medium or Hard
+- 408 hand-curated word pairs across 14 categories, each tagged Easy, Medium or Hard
 - Player names, imposter count, category and difficulty selection
 - Hold-to-peek private reveal, then a final reveal of who the imposters were
 - No accounts, no backend: everything stays on the device
@@ -33,7 +33,10 @@ The build uses relative paths, so it works under any sub-path.
 |---|---|
 | `src/` | The Preact app: `game/` (rules, dataset loading, storage), `screens/`, `ui/` |
 | `dataset/en/` | The word pairs, one JSON file per category |
+| `dataset/categories.json` | Category registry: id blocks (append-only) and retired ids |
 | `scripts/check_dataset.py` | Validates the dataset; runs as part of `npm run build` |
+| `scripts/pipeline/` | The dataset pipeline: blind audit inputs, scoring, applying curator decisions, new themes |
+| `docs/pipeline/` | [How to generate and check Pairs](docs/pipeline/README.md), and the versioned prompts |
 | `CONTEXT.md` | Glossary: Pair, Civilian Word, Deck, Round and the rest |
 | `docs/quality-checklist.md` | The criteria every pair must pass |
 | `docs/curation/` | Per-category curation logs: what was rejected or edited, and why |

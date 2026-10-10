@@ -33,7 +33,7 @@ Brands are naturally Hard (two companies doing the same job), so this Category i
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -51,3 +51,16 @@ Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator
 |---|---|---|
 | Surf Excel / Tide (`en-1031`) | replace → **Zara / H&M** (Hard, `en-1031`) | Surf Excel / Tide failed the blind re-check as near-synonyms (QC-02). |
 | Zara / H&M (`en-1031`) | replace → **Decathlon / IKEA** (Medium, `en-1031`) | Zara / H&M failed the second blind check as near-identical fast-fashion chains (QC-02). Retagged Medium. |
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Spotify / Alexa (Easy, `en-1029`) | QC-15 → **Spotify / Duolingo (Easy, `en-1032`)** | Alexa is a voice assistant, not an app like Spotify. |
+| Decathlon / IKEA (Medium, `en-1031`) | QC-03 → **Cred / Zepto (Easy, `en-1033`)** | Decathlon and IKEA share almost no clues. |
+| Maruti / Royal Enfield (Easy, `en-1027`) | keep | Easy. Both are vehicle brands, so they're the same kind; car vs motorcycle is meant to expose the imposter quickly. |
+| Spotify / Duolingo (Easy, `en-1032`) | QC-03 → **Spotify / JioSaavn (Hard, `en-1032`)** | Spotify/Duolingo failed the blind re-check: the two apps share almost no clues. |
+| Cred / Zepto (Easy, `en-1033`) | QC-03 → **Zepto / Rapido (Easy, `en-1033`)** | Cred/Zepto failed the blind re-check: there's nothing to bluff with. Rapido shares the bikes, the speed and tracking the rider on a map. |
+| Zepto / Rapido (Easy, `en-1033`) | QC-15 → **Amul / Britannia (Easy, `en-1033`)** | Zepto/Rapido failed the blind re-check: groceries and rides are different kinds of service. |

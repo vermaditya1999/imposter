@@ -32,7 +32,7 @@ Generic product names only (Smartphone, not iPhone). Brands live in Brands & App
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -48,3 +48,16 @@ Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Son
 ### Blind re-check of the changes
 
 Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Trimmer / Massager (Medium, `en-1307`) | QC-01 → **Trimmer / Massager (Easy, `en-1307`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Keyboard / Joystick (Medium, `en-1316`) | QC-01 → **Keyboard / Joystick (Easy, `en-1316`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Robot Vacuum / Smart Bulb (Easy, `en-1328`) | QC-04 → **Metal Detector / Smoke Detector (Easy, `en-1330`)** | Robot Vacuum and Smart Bulb are niche in Indian homes and share almost nothing. |
+| Printer / Scanner (Hard, `en-1306`) | keep | Hard. Paper in vs paper out is one clean difference; bluffable 4 is borderline. Keeps Gadgets at 8 Hard. |
+| Calculator / Typewriter (Easy, `en-1320`) | keep | Easy. Both are keypad machines; numbers vs letters. |
+| Weighing Scale / Thermometer (Easy, `en-1322`) | keep | Easy. Both measure the body and show a number. |

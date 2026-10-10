@@ -37,7 +37,7 @@ Landmarks appear only where they are destinations in their own right (Mount Ever
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -48,3 +48,13 @@ Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Son
 ### Blind re-check of the changes
 
 Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Switzerland / New Zealand (Easy, `en-0524`) | QC-01 → **Switzerland / New Zealand (Medium, `en-0524`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Kerala / Andaman (Medium, `en-0518`) | QC-15 → **Kerala / Rajasthan (Easy, `en-0531`)** | Kerala is a state and the Andaman Islands a territory, so the scope was uneven. Retagged Easy to keep the tier mix. |
+| Mount Everest / Niagara Falls (Easy, `en-0525`) | QC-14 → **Bhutan / Vietnam (Easy, `en-0532`)** | Mount Everest and Niagara Falls are each the only famous one of their kind, and they share almost nothing. |

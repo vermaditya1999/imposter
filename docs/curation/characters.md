@@ -35,7 +35,7 @@ Iron Man is used here, so Around the House must not use "Iron" (clothes iron). P
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
@@ -45,3 +45,21 @@ Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Son
 ### Blind re-check of the changes
 
 Every edited or replacement Pair was re-judged blind by a fresh Sonnet evaluator; all passed.
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Batman / Iron Man (Hard, `en-0901`) | QC-01 → **Batman / Iron Man (Medium, `en-0901`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Shinchan / Nobita (Hard, `en-0903`) | QC-01 → **Shinchan / Nobita (Medium, `en-0903`)** | Plays as Medium: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Sherlock Holmes / James Bond (Medium, `en-0904`) | QC-01 → **Sherlock Holmes / James Bond (Easy, `en-0904`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Doraemon / Chhota Bheem (Medium, `en-0914`) | QC-01 → **Doraemon / Chhota Bheem (Easy, `en-0914`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Mario / Pac-Man (Medium, `en-0915`) | QC-01 → **Mario / Pac-Man (Easy, `en-0915`)** | Plays as Easy: the blind evaluator found it too distant for its old tier; tier changed, words and id unchanged. |
+| Munna Bhai / Circuit (Hard, `en-0906`) | QC-15 → **Gandalf / Dumbledore (Hard, `en-0931`)** | Munna Bhai and Circuit are a duo, so every clue for one implies the other. |
+| Tom / Jerry (Easy, `en-0923`) | QC-15 → **Darth Vader / Optimus Prime (Easy, `en-0932`)** | Tom and Jerry are a duo, so every clue for one implies the other. |
+| SpongeBob / Patrick (Easy, `en-0927`) | QC-15 → **Ben 10 / Johnny Bravo (Easy, `en-0933`)** | SpongeBob and Patrick are a duo from one show. |
+| Barbie / Ken (Easy, `en-0928`) | QC-15 → **Chacha Chaudhary / Tenali Raman (Easy, `en-0934`)** | Barbie and Ken are a couple: a set, and a possible relationship trigger. |
+| Aladdin / Genie (Easy, `en-0930`) | remove: QC-15 | Aladdin and the Genie are one story's duo. Removed. |
+| Winnie the Pooh / Tigger (Easy, `en-0929`) | QC-15 → **Singham / Chulbul Pandey (Hard, `en-0935`)** | Winnie the Pooh and Tigger are friends from one story, so clues bleed across. Replaced with two cop heroes from different films, which keeps Characters at 8 Hard. |

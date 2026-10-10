@@ -37,8 +37,16 @@ Includes sports, board and card games, playground games and party games: all thi
 
 ## Audit (v1)
 
-Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](audit-prompt-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
+Re-curated on 2026-10-09 after the blind [adversarial audit](audit-v1.json) (Sonnet, [prompt v1](../pipeline/prompts/audit-v1.md)). Covers every Pair the evaluator flagged plus the weakest 10% overall. Edits keep their id; replacements take the next free id in the block.
 
 | Pair | Verdict | Why |
 |---|---|---|
 | Poker / Teen Patti (Hard, `en-0703`) | keep (flagged) | Hard by design. Telling difference: Teen Patti is three cards at Diwali, Poker is five cards, chips and casinos. |
+
+## Audit (v2)
+
+Re-curated on 2026-10-10 after the blind, tier-aware [v2 audit](audit-v2.json) ([prompt](../pipeline/prompts/audit-v2.md), [pipeline](../pipeline/README.md)). Covers every Pair that failed the v2 rules. The weakest-but-passing Pairs were reviewed and left as they are. Pairs whose words changed retired their old id and took a new one.
+
+| Pair | Verdict | Why |
+|---|---|---|
+| Truth or Dare / Never Have I Ever (Hard, `en-0706`) | QC-06 → **Truth or Dare / Would You Rather (Hard, `en-0730`)** | Never Have I Ever drifts into drinking and sexual confessions, which isn't safe with parents in the room. |

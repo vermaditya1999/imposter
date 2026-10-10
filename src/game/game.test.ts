@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { deal, deck, defaultImposters, maxImposters, type Category, type Selection } from './game';
 import { categories as dataset } from './dataset';
+import registry from '../../dataset/categories.json';
 
 const cats: Category[] = [
   {
@@ -107,9 +108,8 @@ describe('deal', () => {
 });
 
 describe('bundled dataset', () => {
-  it('loads all 14 categories in v1 order', () => {
-    expect(dataset).toHaveLength(14);
-    expect(dataset[0].id).toBe('indian-food');
+  it('loads every registered category in id-block order', () => {
+    expect(dataset.map((c) => c.id)).toEqual(registry.order);
     expect(dataset.reduce((n, c) => n + c.pairs.length, 0)).toBeGreaterThanOrEqual(400);
   });
 });
