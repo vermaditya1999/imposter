@@ -1,9 +1,9 @@
 """Score blind evaluator results against each Pair's stored tier and write the audit file.
 
-  python3 scripts/pipeline/score.py RESULTS_DIR --out docs/curation/audit-v2.json --prompt v2 \
+  python3 scripts/pipeline/score.py RESULTS_DIR --out docs/curation/audit-v3.json --prompt v3 \
       [--drafts dataset/drafts/board-games.json] [--weakest 0.10] [--partial]
 
-RESULTS_DIR holds one JSON array per evaluator (prompt v2 output). The pass/fail rules live here,
+RESULTS_DIR holds one JSON array per evaluator (prompt v2 or v3 output). The pass/fail rules live here,
 not in the prompt, so they can depend on the stored tier the evaluator never sees. Prints the
 worklist: every failing Pair, then the weakest passing ones."""
 import argparse, glob, json, os, sys
@@ -45,7 +45,7 @@ def weakness(r):
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument("results"); ap.add_argument("--out", required=True); ap.add_argument("--prompt", default="v2")
+ap.add_argument("results"); ap.add_argument("--out", required=True); ap.add_argument("--prompt", default="v3")
 ap.add_argument("--drafts", action="append", default=[]); ap.add_argument("--weakest", type=float, default=0.10)
 ap.add_argument("--model", default="sonnet (Claude Code subagent)")
 ap.add_argument("--partial", action="store_true", help="a re-check of chosen ids: skip the coverage warning")
@@ -79,12 +79,15 @@ passing = sorted((r for r in rows if not r["fails"]), key=lambda r: -r["weakness
 weak = {r["id"] for r in passing[:round(len(rows) * a.weakest)]}
 for r in rows: r["worklist"] = "fail" if r["fails"] else ("weak" if r["id"] in weak else None)
 audit = {"prompt_version": a.prompt, "model": a.model, "blind": True,
-         "rules": {"tier": TIER_RULES, "all": "giveaway_risk>=7, one_sided>=7, familiarity<6, kind_of, is_set, not same_kind, unsafe, misfiled, tier_guess two tiers off"},
-         "summary": {"pairs": len(rows), "fail": sum(r["worklist"] == "fail" for r in rows), "weak": len(weak)},
+         "rules": {"tier": TIER_RULES, "all": "giveaway_risk>=7, one_sided>=7, familiarity<6, kind_of, is_set, not same_kind, unsafe, misfiled, tier_guess two tiers off",
+                   "spy_guess": "recorded, not gated yet (v3)"},
+         "summary": {"pairs": len(rows), "fail": sum(r["worklist"] == "fail" for r in rows), "weak": len(weak),
+                     "spy_guess_7plus": {t: sum(r["scores"].get("spy_guess", 0) >= 7 for r in rows if r["tier"] == t) for t in TIER_N}},
          "pairs": rows}
 json.dump(audit, open(os.path.join(ROOT, a.out) if not os.path.isabs(a.out) else a.out, "w"), indent=1, ensure_ascii=False)
 
 print(f"{len(rows)} pairs scored → {a.out}: {audit['summary']['fail']} fail, {len(weak)} weakest-but-passing")
+print(f"spy_guess >= 7 by tier (not gated): {audit['summary']['spy_guess_7plus']}")
 for r in rows:
     if r["worklist"]:
         print(f"{r['id']} {r['worklist']:4} w{r['weakness']:2} {'/'.join(r['words'])} [{r['tier']}→{r['tier_guess']}] "

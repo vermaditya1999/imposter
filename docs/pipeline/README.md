@@ -24,7 +24,7 @@ added a judge that hadn't seen the author's reasoning. What it showed:
 | Role | Who | Sees |
 |---|---|---|
 | Author | The main session (Opus) | Checklist, glossary, every existing word |
-| Evaluator | A fresh subagent per input file, `model: sonnet` | One [audit prompt](prompts/audit-v2.md) and one blind input file. Nothing else. |
+| Evaluator | A fresh subagent per input file, `model: sonnet` | One [audit prompt](prompts/audit-v3.md) and one blind input file. Nothing else. |
 | Curator | The main session, *after* scoring | Scores, then the curation logs and the stored `difference` |
 | Machine | [check_dataset.py](../../scripts/check_dataset.py) | Everything; runs in `npm run build` and fails the build on any error |
 
@@ -37,7 +37,7 @@ added a judge that hadn't seen the author's reasoning. What it showed:
 | `dataset/drafts/<id>.json` | Candidates being drafted (git-ignored; rejects are kept in the curation log) |
 | `docs/curation/<id>.md` | Curation log: every reject, edit and keep, with the criterion that decided it |
 | `docs/curation/audit-<run>.json` | One audit run: scores, failures, the curator's decision per Pair |
-| `docs/pipeline/prompts/` | Versioned prompts: [author-v1](prompts/author-v1.md), [audit-v2](prompts/audit-v2.md) (v1 kept for the record) |
+| `docs/pipeline/prompts/` | Versioned prompts: [author-v1](prompts/author-v1.md), [audit-v3](prompts/audit-v3.md) (v1 and v2 kept for the record) |
 | `scripts/dataset_lib.py` | Shared rules (QC-09/10), id blocks, file writing |
 | `scripts/pipeline/new_category.py` | Register a theme and create its files |
 | `scripts/pipeline/blind.py` | Write blind evaluator inputs; pre-check drafts against QC-09/10 |
@@ -109,13 +109,13 @@ longer knows about just stay in a device's history and are ignored.
 
 ## Recipes
 
-Set a run name first, e.g. `RUN=board-games` or `RUN=audit-v2`. Inputs go in `.pipeline/$RUN/blind`,
+Set a run name first, e.g. `RUN=board-games` or `RUN=audit-v3`. Inputs go in `.pipeline/$RUN/blind`,
 results in `.pipeline/$RUN/results`.
 
 ### Add a new theme
 
-1. **Is it a Category?** It must pass QC-11 (one kind of thing; the name alone tells a Blank-mode imposter
-   what to bluff) and QC-12 (about 30 Pairs without strain). If you can't list 45 candidates quickly, it isn't.
+1. **Is it a Category?** It must pass QC-11 (one kind of thing; the name alone tells a player what kind of
+   word is in play) and QC-12 (about 30 Pairs without strain). If you can't list 45 candidates quickly, it isn't.
 2. Register it, which claims the next id block and creates the files:
    ```bash
    python3 scripts/pipeline/new_category.py board-games "Board Games"
@@ -147,7 +147,7 @@ Do this after a batch of changes, or when real play suggests a Category is tired
 ```bash
 python3 scripts/pipeline/blind.py .pipeline/$RUN/blind --categories all      # one file per Category
 # 14 evaluators in parallel, one per file
-python3 scripts/pipeline/score.py .pipeline/$RUN/results --out docs/curation/$RUN.json --prompt v2
+python3 scripts/pipeline/score.py .pipeline/$RUN/results --out docs/curation/$RUN.json --prompt v3
 # curate the worklist, write changes.json, then:
 python3 scripts/pipeline/apply.py changes.json --dry-run && python3 scripts/pipeline/apply.py changes.json
 python3 scripts/pipeline/blind.py .pipeline/$RUN/recheck --ids <changed ids>
@@ -161,7 +161,7 @@ run in parallel:
 
 > Read exactly two files and nothing else in the repository (no dataset, docs, curation logs or
 > scripts — this is a blind evaluation):
-> 1. `<repo>/docs/pipeline/prompts/audit-v2.md` — your instructions (the part after the `---`).
+> 1. `<repo>/docs/pipeline/prompts/audit-v3.md` — your instructions (the part after the `---`).
 > 2. `<repo>/.pipeline/<run>/blind/<file>.json` — the Pairs, each with its Category name.
 >
 > Evaluate every Pair. Write the JSON array described in the instructions to
@@ -171,7 +171,7 @@ run in parallel:
 ### The changes file (apply.py)
 
 ```json
-{"heading": "Audit (v2)", "intro": "One paragraph for the log section.", "audit": "docs/curation/audit-v2.json",
+{"heading": "Audit (v3)", "intro": "One paragraph for the log section.", "audit": "docs/curation/audit-v3.json",
  "changes": [
   {"action": "keep",   "id": "en-0102", "why": "Hard by design; one telling difference."},
   {"action": "change", "id": "en-0103", "words": ["Jalebi", "Churros"], "difficulty": "medium",
